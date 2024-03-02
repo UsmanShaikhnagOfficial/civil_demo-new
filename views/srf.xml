@@ -155,7 +155,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="srf_id" string="SRF ID" />
-                <field name="kes_number" string="KES No" />
+                <field name="kes_number" string="LAB No" />
                 <field name="srf_date" string="SRF Date" />
                 <field name="job_date" string="JOB Date" />
                 <field name="customer" string="Customer" />

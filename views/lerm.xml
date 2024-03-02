@@ -46,10 +46,6 @@
             </form>
         </field>
     </record>
-<<<<<<< HEAD
-=======
-
->>>>>>> 904c913 (initialize)
     <record id="lerm_discipline_action" model="ir.actions.act_window">
         <field name="name">Discipline</field>
         <field name="type">ir.actions.act_window</field>
@@ -233,18 +229,18 @@
         parent="reporting_menu"
         action="lerm_sample_reports_action"
         groups="lerm_civil.kes_admin_access_group"
-        sequence="10" />
+        sequence="10" /> -->
 
 
-    <!-- <menuitem id="lerm_ulr_reporting"
+    <menuitem id="lerm_ulr_reporting"
         name="ULR"
         parent="reporting_menu"
         action="lerm_ulr_reports_action"
         groups="lerm_civil.kes_admin_access_group"
-        sequence="10" /> -->
+        sequence="10" />
 
 
-    <menuitem id="lerm_product_item_param_master"
+     <menuitem id="lerm_product_item_param_master"
         parent="lerm_menu"
         groups="lerm_civil.kes_hod_access_group,lerm_civil.kes_admin_access_group"
         name="Product Master"
@@ -279,10 +275,7 @@
         parent="lerm_root"
         sequence="10" />
 
-     <!-- <menuitem id="lerm_transaction_data"
-        name="Lab Operations"
-        parent="lerm_root"
-        sequence="10" /> -->
+
 
     <menuitem id="lerm_sample"
         name="Sample"

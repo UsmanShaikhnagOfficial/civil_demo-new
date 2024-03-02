@@ -118,7 +118,7 @@ class SrfForm(models.Model):
   
 
     srf_id = fields.Char(string="SRF ID",tracking=True)
-    kes_number = fields.Char(string="KES No",tracking=True)
+    kes_number = fields.Char(string="LAB No",tracking=True)
     # job_no = fields.Char(string="Job NO.")
     srf_date = fields.Date(string="SRF Date",default=lambda self: self._get_default_date(),tracking=True)
     job_date = fields.Date(string="JOB Date")
@@ -315,7 +315,7 @@ class SrfForm(models.Model):
 
 
             sample_range = "SAM/"+str(sam_next_number)+"-"+str(sam_next_number+record.sample_qty-1)
-            kes_range = "KES/"+str(count+1)+"-"+str(count+1+record.sample_qty-1)
+            kes_range = "LAB/"+str(count+1)+"-"+str(count+1+record.sample_qty-1)
             record.write({'sample_range': sample_range , 'kes_range': kes_range })
             samples = self.env['lerm.srf.sample'].search([('sample_range_id','=',record.id)])
 
@@ -331,7 +331,7 @@ class SrfForm(models.Model):
                 day = str(self.srf_date.day).zfill(2)
                 count = count + 1
 
-                kes_no = "KES"+ year+month+day + str(count).zfill(3) or "New"
+                kes_no = "LAB"+ year+month+day + str(count).zfill(3) or "New"
 
                 # kes_no = "KES"+ str(record.srf_date) + self.env['ir.sequence'].next_by_code('lerm.srf.sample.kes') or 'New'
                 kes_no_daywise = self.env['ir.sequence'].next_by_code('lerm.sample.daywise.seq') 
