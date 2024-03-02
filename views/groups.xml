@@ -115,5 +115,4 @@
         action="lerm_civil_datasheet_master_action"
         sequence="11" />
 
-    <!-- Test -->
 </odoo>
