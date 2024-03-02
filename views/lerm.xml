@@ -46,6 +46,10 @@
             </form>
         </field>
     </record>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 904c913 (initialize)
     <record id="lerm_discipline_action" model="ir.actions.act_window">
         <field name="name">Discipline</field>
         <field name="type">ir.actions.act_window</field>

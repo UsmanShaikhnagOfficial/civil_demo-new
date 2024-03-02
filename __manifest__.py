@@ -4,6 +4,7 @@
  'website': "http://www.esehat.org", 
  'category': 'Uncategorized', 
  'version': '13.0.1', 
+<<<<<<< HEAD
  'depends':['base' , 'contacts','stock','product' , 'mail','documents','documents_spreadsheet','lerm_civil_inv','attachment_indexation','maintenance'],
  'data': [
     'security/security.xml',
@@ -234,4 +235,13 @@
         '/lerm_civil/static/src/xml/spreadsheet.xml'
     ],
         }
+=======
+ 'depends':['base' , 'contacts','stock','product'],
+ 'data': [
+    'views/lerm.xml',
+    'views/groups.xml',
+    'views/material.xml',
+    'views/srf.xml'
+    ]
+>>>>>>> 904c913 (initialize)
 }
