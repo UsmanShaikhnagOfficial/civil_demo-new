@@ -442,13 +442,14 @@
                             <label for="weight_of_mercury_before_trial1" string="Trial 1" />
                             <field  name="weight_of_mercury_before_trial1"  colspan="3"  nolabel="1"/>
                           </group>
+                          
                           <group colspan="1" class="oe_inline"  >
                             <label for="weight_of_mercury_before_trial2" string="Trial 2" />
                             <field  name="weight_of_mercury_before_trial2"  colspan="3"  nolabel="1"/>
                           </group>
                         </div>
-                    </group>
-                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}"> -->
                         <label for="weight_of_mercury_after_trail1" string="Weight of mercury after placing the sample in the permeability cell  (m₂),g." style="width:550px"/>
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -461,7 +462,7 @@
                           </group>
                         </div>
                     </group>
-                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}" style="white-space:nowrap;">
                           <group>
                             <field  name="density_of_mercury"  colspan="6" />
                           </group>
@@ -493,7 +494,7 @@
                       <h6>Repeat the procedure  with fresh cement beds until two values of V are obtained differing by less than 0.005 cm3.Record the mean of these two values as V</h6>
                     </group>
                     <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
-                      <h5>Determination of Apparatus Constant (k)</h5>
+                      <h4>Determination of Apparatus Constant (k)</h4>
                     </group>
                     <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
                           <group>
@@ -530,29 +531,29 @@
                             <field  name="average_time_fineness"  colspan="6"/>
                           </group>
                     </group>
-                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">                        
-                          <field name="specific_surface_of_reference_sample" style="width:70%;"/>
-                          <field name="air_viscosity_of_three_temp" style="width:70%;"/>
-                          <field name="density_of_reference_sample" style="width:70%;"/>
-                          <field name="mean_of_three_measured_times" style="width:70%;"/>
-                          <field name="apparatus_constant" style="width:70%;"/>
+                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}" style="white-space:nowrap;">                        
+                          <field name="specific_surface_of_reference_sample" style="width:40%;"/>
+                          <field name="air_viscosity_of_three_temp" style="width:40%;"/>
+                          <field name="density_of_reference_sample" style="width:40%;"/>
+                          <field name="mean_of_three_measured_times" style="width:40%;"/>
+                          <field name="apparatus_constant" style="width:40%;"/>
                     </group>
                     <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
-                      <h6>Determination of fineness</h6>
+                      <h4>Determination of fineness</h4>
                     </group>
                     <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
                       <h6>*Using the sample whose fineness is to be calculated.</h6>
                     </group>
-                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
-                          <group>
+                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}" style="white-space:nowrap;">
+                          
                             <field  name="density_fineness_calculated"  colspan="6"/>
-                          </group>
-                    </group>
-                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">                        
-                          <group >
+                         
+                    <!-- </group>
+                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">                         -->
+                          
                             <field  name="mass_of_sample_taken_fineness_calculated"  colspan="6"/>
-                          </group>
-                    </group>
+                          
+                     </group>
                     <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">
                         <label for="time_sample_trial1" string="Time(t),sec." />
                         <div class="address_format " >
@@ -570,6 +571,7 @@
                           </group>
                         </div>
                     </group>
+                    
                     <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}">                        
                           <group >
                             <field  name="average_sample_time"  colspan="6"/>

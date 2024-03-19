@@ -96,10 +96,10 @@
                     </group>
                     </group> -->
                    
-                    <group attrs="{'invisible': [('liquid_limit_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('liquid_limit_visible', '=', False)]}" >
                   
-                      <field name="child_liness">
-                       <tree editable="bottom">
+                      <field name="child_liness" style="width:77%">
+                       <tree editable="bottom" nolabel="1">
                                 <field name='container_no' string="Container No"/>
                                 <field name="blwo_no" string="No.of Blows"/>
                                 <field name='mass_of_wet' string="Mass of wet sample+container (M1) in gms"/>
@@ -118,7 +118,7 @@
 
                     
                     <group attrs="{'invisible': [('liquid_limit_visible', '=', False)]}">
-                     <field name="liquid_limit" width="50%" />
+                     <field name="liquid_limit" style="width:50%"/>
                      <field name="are_child_lines_filled" invisible="1"/>
                         <button string="Calculate Liquid Limit" name="liquid_calculation" type="object" class="oe_highlight" 
                                 attrs="{'invisible': [('are_child_lines_filled', '=', False)]}" />
@@ -165,8 +165,8 @@
                       <!-- <! <field name="cumulative"/>> -->
                       
                     </group>
-                    <group attrs="{'invisible': [('plastic_limit_visible', '=', False)]}">
-                     <field name="plastic_limit"/>
+                    <group attrs="{'invisible': [('plastic_limit_visible', '=', False)]}" style="white-space: nowrap;">
+                     <field name="plastic_limit" />
                      <field name="plasticity_index"/>
                      <field name='plasticity_index_conformity' col="4"
                                            decoration-success="plasticity_index_conformity == 'pass'" 
@@ -222,13 +222,13 @@
                     </group>
                     
                  
-                    <group attrs="{'invisible': [('light_omc_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('light_omc_visible', '=', False)]}" style="white-space: nowrap;">
                      <field name="wt_of_modul_light_omc"/>
                      <field name="vl_of_modul_light_omc"/>
                     </group>
                     <group attrs="{'invisible': [('light_omc_visible', '=', False)]}">
                   
-                      <field name="light_omc_table">
+                      <field name="light_omc_table" style="width:80%">
                         <tree editable="bottom">
                           <field name="determination_no"/>
                           <field name="wt_of_modul_compact"/>
@@ -272,13 +272,13 @@
                     </group>
                     
                    
-                    <group attrs="{'invisible': [('heavy_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('heavy_visible', '=', False)]}" style="white-space: nowrap;">
                      <field name="wt_of_modul"/>
                      <field name="vl_of_modul"/>
                     </group>
                     <group attrs="{'invisible': [('heavy_visible', '=', False)]}">
                   
-                      <field name="heavy_table">
+                      <field name="heavy_table" style="width:80%">
                         <tree editable="bottom">
                           <field name="determination_no"/>
                           <field name="wt_of_modul_compact"/>
@@ -380,43 +380,45 @@
                       <field name="end_date_dry_density"/>
                     </group>
                     </group> -->
-                      <group attrs="{'invisible': [('dry_density_visible', '=', False)]}">
+                      <!-- <group attrs="{'invisible': [('dry_density_visible', '=', False)]}">
                        <group>
-                        <field name='mmd'/>
+                       
                        </group>
                        <group>
-                        <field name='omc'/>
+                       
                        </group>
-                      </group>
+                      </group> -->
                    
                     
                     <group attrs="{'invisible': [('dry_density_visible', '=', False)]}">
                   
                     
-                                 <group>
+                                 <group style="white-space: nowrap;">
+                                         <field name='mmd'/>
                                         <field name='determination_no'/>
-                                        <br></br>
+                                       
                                         <field name='wt_of_sample'/>
-                                        <br></br>
+                                       
                                         <field name='water_of_sample'/>
-                                        <br></br>
+                                       
                                         <field name='wt_of_before_cylinder'/>
-                                        <br></br>
+                                        
                                         <field name='wt_of_after_cylinder'/>
-                                        <br></br>
+                                        
                                         <field name='wt_of_sand_cone'/>
                                 </group>
-                                <group>
+                                <group style="white-space: nowrap;">
+                                        <field name='omc'/>
                                         <field name='wt_of_sand_hole'/>
-                                        <br></br>
+                                        
                                         <field name='density_of_sand'/>
-                                        <br></br>
+                                        
                                         <field name='volume_of_hole'/>
-                                        <br></br>
+                                       
                                         <field name='bulk_density_of_sample'/>
-                                        <br></br>
+                                        
                                         <field name='dry_density_of_sample'/>
-                                        <br></br>
+                                        
                                         <field name='degree_of_compaction'/>
                                 </group>
 

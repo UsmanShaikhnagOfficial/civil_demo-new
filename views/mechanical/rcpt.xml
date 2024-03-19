@@ -19,7 +19,7 @@
                         <group>
                             <field name="date_of_casting"  string="Date of Casting" identity="extra"/>
                         </group>
-                        <group>
+                        <group style="width:30%">
                             <field name="date_of_testing"  string="Date of Testing" identity="extra"/>
                         </group>
                         <group>

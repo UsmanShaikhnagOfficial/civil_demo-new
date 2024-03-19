@@ -486,6 +486,254 @@ class ChemicalFineAggregate(models.Model):
             else:
                 record.sulphate_percent_nabl_fine = 'fail'
 
+      #Alkali as Na₂O Clause  4.11.4 ( By Flame Photometer)
+
+    na2O_name = fields.Char("Name",default="Na₂O")
+    na2O_name_visible = fields.Boolean("Na₂O",compute="_compute_visible")
+
+
+    sample_wt_na2O = fields.Float("A)Weight of sample taken",digits=(16, 4))
+    dilution_na2O = fields.Float("B)Dilution")
+    sidium_reading_na2O = fields.Float("C)Sodium reading")
+    factor_graph_na2O = fields.Float("D)Factor from graph",digits=(16, 4))
+    dilution_reading_na2O = fields.Float("E)Dilution *Reading* factor *100/10000*wt of sample*A4",compute="_compute_dilution_reading_na2O",digits=(16, 2))
+    na2O = fields.Float("F)Na *1.3480",compute="_compute_na2O_percent",digits=(16, 2))
+
+
+    @api.depends('dilution_na2O', 'sidium_reading_na2O', 'factor_graph_na2O', 'sample_wt_na2O')
+    def _compute_dilution_reading_na2O(self):
+        for record in self:
+            record.dilution_reading_na2O = (
+                record.dilution_na2O
+                * record.sidium_reading_na2O
+                * record.factor_graph_na2O
+                * 100
+                / 10000
+                * record.sample_wt_na2O
+            )
+
+    @api.depends('dilution_reading_na2O')
+    def _compute_na2O_percent(self):
+        for record in self:
+            record.na2O = record.dilution_reading_na2O * 1.348
+
+
+
+
+    
+
+
+
+    
+
+    na2O_conformity = fields.Selection([
+            ('pass', 'Pass'),
+            ('fail', 'Fail')], string="Conformity",compute="_compute_na2O_conformity", store=True)
+
+    @api.depends('na2O','eln_ref','grade')
+    def _compute_na2O_conformity(self):
+        
+        for record in self:
+            record.na2O_conformity = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','03507018-bb06-4362-a2e7-6d70ec7d8870')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','03507018-bb06-4362-a2e7-6d70ec7d8870')]).parameter_table
+            for material in materials:
+                if material.grade.id == record.grade.id:
+                    req_min = material.req_min
+                    req_max = material.req_max
+                    mu_value = line.mu_value
+                    
+                    lower = record.na2O - record.na2O*mu_value
+                    upper = record.na2O + record.na2O*mu_value
+                    if lower >= req_min and upper <= req_max:
+                        record.na2O_conformity = 'pass'
+                        break
+                    else:
+                        record.na2O_conformity = 'fail'
+
+    na2O_nabl = fields.Selection([
+        ('pass', 'NABL'),
+        ('fail', 'Non-NABL')], string="NABL",compute="_compute_na2O_nabl",  store=True)
+
+   
+    @api.depends('na2O','eln_ref','grade')
+    def _compute_na2O_nabl(self):
+        
+        for record in self:
+            record.na2O_nabl = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','03507018-bb06-4362-a2e7-6d70ec7d8870')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','03507018-bb06-4362-a2e7-6d70ec7d8870')]).parameter_table
+            
+            lab_min = line.lab_min_value
+            lab_max = line.lab_max_value
+            mu_value = line.mu_value
+            
+            lower = record.na2O - record.na2O*mu_value
+            upper = record.na2O + record.na2O*mu_value
+            if lower >= lab_min and upper <= lab_max:
+                record.na2O_nabl = 'pass'
+                break
+            else:
+                record.na2O_nabl = 'fail'
+
+
+    # Alkali as K₂O Clause  4.11.4 ( By Flame Photometer)
+
+    k2O_name = fields.Char("Name",default="K₂O")
+    k2O_name_visible = fields.Boolean("K₂O",compute="_compute_visible")
+
+
+    sample_wt_k2O = fields.Float("A)Weight of sample taken",digits=(16, 4))
+    dilution_k2O = fields.Float("B)Dilution")
+    sidium_reading_k2O = fields.Float("C)Potasium reading")
+    factor_graph_k2O = fields.Float("D)Factor from graph",digits=(16, 4))
+    dilution_reading_k2O = fields.Float("E)Dilution *Reading* factor *100/10000*wt of sample*A4",compute="_compute_dilution_reading_k2O",digits=(16, 2))
+    k2O = fields.Float("F)K *1.20",compute="_compute_k2O_percent",digits=(16, 2))
+
+
+    @api.depends('dilution_k2O', 'sidium_reading_k2O', 'factor_graph_k2O', 'sample_wt_k2O')
+    def _compute_dilution_reading_k2O(self):
+        for record in self:
+            record.dilution_reading_k2O = (
+                record.dilution_k2O
+                * record.sidium_reading_k2O
+                * record.factor_graph_k2O
+                * 100
+                / 10000
+                * record.sample_wt_k2O
+            )
+
+    @api.depends('dilution_reading_k2O')
+    def _compute_k2O_percent(self):
+        for record in self:
+            record.k2O = record.dilution_reading_k2O * 1.20
+
+            
+
+
+    
+
+
+
+    
+
+    k2O_conformity = fields.Selection([
+            ('pass', 'Pass'),
+            ('fail', 'Fail')], string="Conformity",compute="_compute_k2O_conformity", store=True)
+
+    @api.depends('k2O','eln_ref','grade')
+    def _compute_k2O_conformity(self):
+        
+        for record in self:
+            record.k2O_conformity = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','3997903d-8a2e-49fc-baa1-531f0b805cac')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','3997903d-8a2e-49fc-baa1-531f0b805cac')]).parameter_table
+            for material in materials:
+                if material.grade.id == record.grade.id:
+                    req_min = material.req_min
+                    req_max = material.req_max
+                    mu_value = line.mu_value
+                    
+                    lower = record.k2O - record.k2O*mu_value
+                    upper = record.k2O + record.k2O*mu_value
+                    if lower >= req_min and upper <= req_max:
+                        record.k2O_conformity = 'pass'
+                        break
+                    else:
+                        record.k2O_conformity = 'fail'
+
+    k2O_nabl = fields.Selection([
+        ('pass', 'NABL'),
+        ('fail', 'Non-NABL')], string="NABL",compute="_compute_k2O_nabl",  store=True)
+
+   
+    @api.depends('k2O','eln_ref','grade')
+    def _compute_k2O_nabl(self):
+        
+        for record in self:
+            record.k2O_nabl = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','3997903d-8a2e-49fc-baa1-531f0b805cac')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','3997903d-8a2e-49fc-baa1-531f0b805cac')]).parameter_table
+            
+            lab_min = line.lab_min_value
+            lab_max = line.lab_max_value
+            mu_value = line.mu_value
+            
+            lower = record.k2O - record.k2O*mu_value
+            upper = record.k2O + record.k2O*mu_value
+            if lower >= lab_min and upper <= lab_max:
+                record.k2O_nabl = 'pass'
+                break
+            else:
+                record.k2O_nabl = 'fail'
+
+
+
+
+
+
+    total_alkali_content_name = fields.Char("Name",default="Total alkali content as Na2O")
+    total_alkali_content_visible = fields.Boolean("equivalent, % ",compute="_compute_visible")
+
+    total_alkali_content = fields.Float("Total Alkali Content (%)", compute="_compute_total_alkali_content", digits=(16, 2))
+
+    @api.depends('na2O', 'k2O')
+    def _compute_total_alkali_content(self):
+        for record in self:
+            record.total_alkali_content = record.na2O + 0.65 * record.k2O
+
+
+
+    total_alkali_content_conformity = fields.Selection([
+            ('pass', 'Pass'),
+            ('fail', 'Fail')], string="Conformity",compute="_compute_total_alkali_content_conformity", store=True)
+
+    @api.depends('total_alkali_content','eln_ref','grade')
+    def _compute_total_alkali_content_conformity(self):
+        
+        for record in self:
+            record.total_alkali_content_conformity = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','0510b578-b3de-4045-bd55-5f54198e9dc8')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','0510b578-b3de-4045-bd55-5f54198e9dc8')]).parameter_table
+            for material in materials:
+                if material.grade.id == record.grade.id:
+                    req_min = material.req_min
+                    req_max = material.req_max
+                    mu_value = line.mu_value
+                    
+                    lower = record.total_alkali_content - record.total_alkali_content*mu_value
+                    upper = record.total_alkali_content + record.total_alkali_content*mu_value
+                    if lower >= req_min and upper <= req_max:
+                        record.total_alkali_content_conformity = 'pass'
+                        break
+                    else:
+                        record.total_alkali_content_conformity = 'fail'
+
+    total_alkali_content_nabl = fields.Selection([
+        ('pass', 'NABL'),
+        ('fail', 'Non-NABL')], string="NABL",compute="_compute_total_alkali_content_nabl",  store=True)
+
+   
+    @api.depends('total_alkali_content','eln_ref','grade')
+    def _compute_total_alkali_content_nabl(self):
+        
+        for record in self:
+            record.total_alkali_content_nabl = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','0510b578-b3de-4045-bd55-5f54198e9dc8')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','0510b578-b3de-4045-bd55-5f54198e9dc8')]).parameter_table
+            
+            lab_min = line.lab_min_value
+            lab_max = line.lab_max_value
+            mu_value = line.mu_value
+            
+            lower = record.total_alkali_content - record.total_alkali_content*mu_value
+            upper = record.total_alkali_content + record.total_alkali_content*mu_value
+            if lower >= lab_min and upper <= lab_max:
+                record.total_alkali_content_nabl = 'pass'
+                break
+            else:
+                record.total_alkali_content_nabl = 'fail'
+
 
 
 
@@ -499,6 +747,9 @@ class ChemicalFineAggregate(models.Model):
             record.alkali_aggregate_alkalinity_visible = False
             record.ph_visible = False
             record.alkali_aggregate_dissolved_visible = False
+            record.na2O_name_visible = False
+            record.k2O_name_visible = False
+            record.total_alkali_content_visible = False
             for sample in record.sample_parameters:
                 print("Samples internal id",sample.internal_id)
                 if sample.internal_id == '628cf04d-645d-4794-a0fd-3daabff4b044':
@@ -511,6 +762,12 @@ class ChemicalFineAggregate(models.Model):
                     record.alkali_aggregate_alkalinity_visible = True
                 if sample.internal_id == 'fa80a69f-bf0f-4aa3-a9d3-70767e7bf24a':
                     record.alkali_aggregate_dissolved_visible = True
+                if sample.internal_id == '03507018-bb06-4362-a2e7-6d70ec7d8870':
+                    record.na2O_name_visible = True
+                if sample.internal_id == '3997903d-8a2e-49fc-baa1-531f0b805cac':
+                    record.k2O_name_visible = True
+                if sample.internal_id == '0510b578-b3de-4045-bd55-5f54198e9dc8':
+                    record.total_alkali_content_visible = True
                     	
 
     

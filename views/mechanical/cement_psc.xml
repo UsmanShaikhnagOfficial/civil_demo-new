@@ -508,7 +508,7 @@
                             <field  name="average_time_fineness"  colspan="6"/>
                           </group>
                     </group>
-                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}" style="width:70%;">                        
+                    <group attrs="{'invisible': [('fineness_blaine_visible', '=', False)]}" style="white-space:nowrap; width:70%;">                        
                           <field name="specific_surface_of_reference_sample" style="width:70%;"/>
                           <field name="air_viscosity_of_three_temp" style="width:70%;"/>
                           <field name="density_of_reference_sample" style="width:70%;"/>

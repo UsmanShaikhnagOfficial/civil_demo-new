@@ -193,7 +193,7 @@
                         </h1>
                     </group>
                    
-                     <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                     <!-- <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="wt_of_empty_pycnometer" string="Weight of empty Pycnometer in gms" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -203,7 +203,7 @@
 
                         </div>
                     </group>
-                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="wt_of_pycnometer" string="Weight of Pycnometer with full of water in gms" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -213,7 +213,7 @@
 
                         </div>
                     </group>
-                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="wt_of_pycnometer_surface_dry" string="Weight of Pycnometer + Saturated surface dry Aggregate in gms" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -223,7 +223,7 @@
 
                         </div>
                     </group>
-                     <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                     <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="wt_of_pycnometer_surface_dry_water" string="Weight of Pycnometer + Saturated surface dry Aggregate + Water in gms" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -233,7 +233,7 @@
 
                         </div>
                     </group>
-                     <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                     <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="wt_of_saturated_surface_dry" string="Weight of Saturated surface dry Aggregate in gms" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -244,7 +244,7 @@
                         </div>
                     </group>
 
-                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="wt_of_oven_dried" string="Weight of Oven dried Aggregate in gms" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -255,7 +255,7 @@
                         </div>
                     </group>
 
-                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="volume_of_water" string="Volume of water displaced by saturated surface dry aggregate" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -266,7 +266,7 @@
                         </div>
                     </group>
 
-                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="specific_gravity" string="SPECIFIC GRAVITY" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -277,7 +277,7 @@
                         </div>
                     </group>
 
-                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap;">
                         <label for="water_absorption" string="Water Absorption %" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -286,7 +286,21 @@
                           </group>
 
                         </div>
+                    </group> -->
+
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap; width:70%;">
+                        <field name="wt_of_empty_pycnometer" />
+                        <field name="wt_of_pycnometer" />
+                        <field name="wt_of_pycnometer_surface_dry" />
+                        <field name="wt_of_pycnometer_surface_dry_water"  />
+                        <field name="wt_of_saturated_surface_dry"  />
+                        <field name="wt_of_oven_dried"  />
+                        <field name="volume_of_water"  />
+                        <field name="specific_gravity"  />
+                        <field name="water_absorption"  />
                     </group>
+
+
                     <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}">
                           <group>
                             <field  name="specific_gravity_conformity"
@@ -309,7 +323,7 @@
                         </h1>
                     </group>
                    
-                     <group attrs="{'invisible': [('loose_bulk_visible', '=', False)]}">
+                     <!-- <group attrs="{'invisible': [('loose_bulk_visible', '=', False)]}">
                         <label for="weight_empty_bucket" string="Weight of Empty Bucket in kg" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -358,7 +372,16 @@
                           </group>
 
                         </div>
+                    </group> -->
+
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap; width:50%;" >
+                        <field name="weight_empty_bucket" />
+                        <field name="volume_of_bucket" />
+                        <field name="sample_plus_bucket"  />
+                        <field name="sample_weight"   />
+                        <field name="loose_bulk_density" />
                     </group>
+
                     <group attrs="{'invisible': [('loose_bulk_visible', '=', False)]}">
                           <group>
                             <field  name="loose_bulk_density_conformity"
@@ -377,7 +400,7 @@
                         </h1>
                     </group>
                    
-                     <group attrs="{'invisible': [('rodded_bulk_visible', '=', False)]}">
+                     <!-- <group attrs="{'invisible': [('rodded_bulk_visible', '=', False)]}">
                         <label for="weight_empty_bucket1" string="Weight of Empty Bucket in kg" />
                         <div class="address_format " >
                           <group colspan="18"  class="oe_inline">
@@ -426,6 +449,14 @@
                           </group>
 
                         </div>
+                    </group> -->
+
+                    <group attrs="{'invisible': [('specific_gravity_visible', '=', False)]}" style="white-space: nowrap; width:50%;" >
+                        <field name="weight_empty_bucket1" />
+                        <field name="volume_of_bucket1" />
+                        <field name="sample_plus_bucket1"  />
+                        <field name="sample_weight1"   />
+                        <field name="rodded_bulk_density1" />
                     </group>
                     <group attrs="{'invisible': [('rodded_bulk_visible', '=', False)]}">
                           <group>
@@ -441,7 +472,7 @@
                   
                  
 
-                     <!-- Deleterious Material -->
+                     <!-- Finer than 75 micron -->
                     <group attrs="{'invisible': [('finer75_visible', '=', False)]}">
                         <h1>
                             <field name="name_finer75" readonly="1" nolabel="1"/>
@@ -449,7 +480,7 @@
 
                         </h1>
                     </group>
-                    <group style="width:50%" attrs="{'invisible': [('finer75_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('finer75_visible', '=', False)]}" style="white-space: nowrap; width:50%;">
                         <field name='wt_sample_finer75'/>
                         <field name='wt_dry_sample_finer75'/>
                         <field name='material_finer75'/>
@@ -464,7 +495,7 @@
                           </group>
                     </group>
 
-
+                  <!-- Deleterious content (Clay Lumps) -->
                     <group attrs="{'invisible': [('clay_lump_visible', '=', False)]}">
                         <h1>
                             <field name="name_clay_lumps" readonly="1" nolabel="1"/>
@@ -472,7 +503,7 @@
 
                         </h1>
                     </group>
-                    <group style="width:50%" attrs="{'invisible': [('clay_lump_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('clay_lump_visible', '=', False)]}" style="white-space: nowrap; width:50%;">
                         <field name='wt_sample_clay_lumps'/>
                         <field name='wt_dry_sample_clay_lumps'/>
                         <field name='clay_lumps_percent'/>
@@ -487,7 +518,7 @@
                           </group>
                     </group>
 
-
+                   <!-- Deleterious content (Light weight Particles) -->
                     <group attrs="{'invisible': [('light_weight_visible', '=', False)]}">
                         <h1>
                             <field name="name_light_weight" readonly="1" nolabel="1"/>
@@ -495,7 +526,7 @@
 
                         </h1>
                     </group>
-                    <group style="width:50%" attrs="{'invisible': [('light_weight_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('light_weight_visible', '=', False)]}" style="white-space: nowrap; width:50%;">
                         <field name='wt_sample_light_weight'/>
                         <field name='wt_dry_sample_light_weight'/>
                         <field name='light_weight_percent'/>
@@ -519,7 +550,7 @@
 
                         </h1>
                     </group>
-                    <group style="width:50%" attrs="{'invisible': [('moisture_content_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('moisture_content_visible', '=', False)]}" style="white-space: nowrap; width:70%;">
                         <field name='wt_in_container'/>
                         <field name='wt_in_sample'/>
                         <field name='wt_in_sample_and_container'/>
@@ -547,19 +578,20 @@
 
                         </h1>
                     </group>
-                    <group attrs="{'invisible': [('soundness_mgso4_visible', '=', False)]}">
-                    <field name="soundness_mgso4_child_lines" nolabel="1" >
-                            <tree editable="bottom">
-                                <field name="sieve_size_passing"/>
-                                <field name="sieve_size_retained"/>
-                                <field name="grading_original_sample" readonly='1'/>
-                                <field name="weight_before_test"/>
-                                <field name="weight_after_test"/>
-                                <field name="passing_percent" readonly='1'/>
-                                <field name="cumulative_loss_percent"/>
+                    <group attrs="{'invisible': [('soundness_mgso4_visible', '=', False)]}"  >
+                    <field name="soundness_mgso4_child_lines" nolabel="1" style="width:80% " >
+                            <tree>
+                                <field name="sieve_size_passing" style="white-space:normal; word-break:break-word;"/>
+                                <field name="sieve_size_retained"  style="white-space:normal; word-break:break-word;"/>
+                                <field name="grading_original_sample" readonly='1'  style="white-space:normal; word-break:break-word;" />
+                                <field name="weight_before_test"  style="white-space:normal; word-break:break-word;"/>
+                                <field name="weight_after_test"  style="white-space:normal; word-break:break-word;"/>
+                                <field name="passing_percent" readonly='1' style="white-space:normal; word-break:break-word;" />
+                                <field name="cumulative_loss_percent"  />
                             </tree>
                     </field>
                     </group>
+              
                     <group attrs="{'invisible': [('soundness_mgso4_visible', '=', False)]}">
                         <field name="total_mgso4"/>
                         <field name="soundness_mgso4"/>
@@ -588,18 +620,20 @@
                         </h1>
                     </group>
                     <group attrs="{'invisible': [('soundness_na2so4_visible', '=', False)]}">
-                    <field name="soundness_na2so4_child_lines" nolabel="1" >
-                            <tree editable="bottom">
+                    <field name="soundness_na2so4_child_lines" nolabel="1" style="width:80%" >
+                            <tree>
                                 <field name="sieve_size_passing"/>
                                 <field name="sieve_size_retained"/>
-                                <field name="grading_original_sample" readonly='1' style="width:200px;"/>
+                                <field name="grading_original_sample" readonly='1'/>
                                 <field name="weight_before_test"/>
                                 <field name="weight_after_test"/>
                                 <field name="passing_percent" readonly='1'/>
                                 <field name="cumulative_loss_percent"/>
                             </tree>
                     </field>
+                   
                     </group>
+                
                     <group attrs="{'invisible': [('soundness_na2so4_visible', '=', False)]}">
                         <field name="total_na2so4"/>
                         <field name="soundness_na2so4"/>

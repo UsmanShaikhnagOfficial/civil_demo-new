@@ -42,7 +42,7 @@
                         </h1>
                     </group>
                     <group attrs="{'invisible': [('dimension_visible', '=', False)]}">
-                        <field name="dimension_table" nolabel="1">
+                        <field name="dimension_table" nolabel="1" style="width:70%">
                         <tree editable="bottom">
                           <field name="length"/>
                           <field name="width"/>
@@ -53,16 +53,13 @@
                     <group attrs="{'invisible': [('dimension_visible', '=', False)]}">
                         <group style="width:33%">
                             <field name="average_length"/>
-                        </group>
-
-                        <group style="width:33%">
+                        
                             <field name="average_width"/>
-                        </group>
-
-                        <group style="width:33%">
+                        
                             <field name="average_height"/>
                         </group>
                     </group>
+                    
                     
 
                     <!-- Moisture Content  -->
@@ -73,8 +70,8 @@
                             <field name="moisture_visible" invisible="1"/>
                         </h1>
                     </group>
-                    <group attrs="{'invisible': [('moisture_visible', '=', False)]}">
-                        <field name="moisture_content_table" nolabel="1">
+                    <group attrs="{'invisible': [('moisture_visible', '=', False)]}" style="width:75%">
+                        <field name="moisture_content_table" nolabel="1" >
                         <tree editable="bottom">
                           <field name="wt_sample"/>
                           <field name="oven_wt"/>
@@ -85,11 +82,9 @@
                     <group attrs="{'invisible': [('moisture_visible', '=', False)]}">
                         <group style="width:33%">
                             <field name="average_moisture_content"/>
-                        </group>
-                        <group style="width:33%">
+                        
                             <field name="moisture_confirmity"/>
-                        </group>
-                        <group style="width:33%">
+                        
                             <field name="moisture_nabl"/>
                         </group>
                     </group>
@@ -108,13 +103,13 @@
                     </group>
                     
                     <group attrs="{'invisible': [('density_visible', '=', False)]}">
-                        <field name="density_table"  style=" white-space: normal;">
-                        <tree editable="bottom">
+                        <field name="density_table" style="width:90%" nolabel="1">
+                        <tree>
                           <field name="length" widget="textarea" options="{'style': 'height: 60px:'}"/>
-                          <field name="width"/>
+                          <field name="width" style="white-space:nowrap; width:50px"/>
                           <field name="height"/>
                           <field name="volume" />
-                          <field name="wt_sample"/>
+                          <field name="wt_sample" style="white-space:nowrap; width:50px"/>
                           <field name="density"/>
                         </tree>
                         </field>
@@ -122,11 +117,9 @@
                     <group attrs="{'invisible': [('density_visible', '=', False)]}">
                         <group style="width:33%">
                             <field name="average_density"/>
-                        </group>
-                        <group style="width:33%">
+                       
                             <field name="density_confirmity"/>
-                        </group>
-                        <group style="width:33%">
+                      
                             <field name="density_nabl"/>
                         </group>
                     </group>
@@ -152,11 +145,9 @@
                     <group attrs="{'invisible': [('drying_shrinkage_visible', '=', False)]}">
                         <group style="width:33%">
                             <field name="average_drying_shrinkage"/>
-                        </group>
-                        <group style="width:33%">
+                        
                             <field name="drying_shrinkage_confirmity"/>
-                        </group>
-                       <group style="width:33%">
+                       
                             <field name="drying_shrinkage_aac_nabl"/>
                         </group>
                     </group>
@@ -171,7 +162,7 @@
                         </h1>
                     </group>
                     <group attrs="{'invisible': [('compressive_strength_visible', '=', False)]}">
-                        <field name="compressive_strength_table" nolabel="1">
+                        <field name="compressive_strength_table" nolabel="1" style="width:70%">
                         <tree editable="bottom">
                           <field name="crosssectional_area"/>
                           <field name="aac_load"/>
@@ -182,11 +173,9 @@
                     <group attrs="{'invisible': [('compressive_strength_visible', '=', False)]}">
                         <group style="width:33%">
                             <field name="average_compressive_strength"/>
-                        </group>
-                        <group style="width:33%">
+                        
                             <field name="compressive_strength_confirmity"/>
-                        </group>
-                        <group style="width:33%">
+                       
                             <field name="compressive_strength_nabl"/>
                         </group>
                     </group>

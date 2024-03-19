@@ -344,12 +344,12 @@ class ChemicalHasdenedConcrete(models.Model):
     chloride_visible = fields.Boolean("Chloride as Cl  BS 1881 Part 124:2015(prestressed concrete)",compute="_compute_visible")
 
     chloride_cube = fields.Float("A)Cube Density, Kg/m3")
-    chloride_mass = fields.Float("B) Mass of the concrete cube taken for analysis ( gm)")
+    chloride_mass = fields.Float("B) Mass of the concrete cube taken for analysis ( gm)",digits=(16, 4))
     chloride_valume = fields.Float("C) Volume of 0.02 N (Silver nitrate added) in blank")
     chloride_reading = fields.Float("D) Burette Reading of 0.1N Ammonium thiocynate  Consumed for  Sample) ( ml)")
     chloride_normality = fields.Float("E) Normality of 0.1 N Ammonium thiocynate solution ( N)")
     chloride_p = fields.Float("F)Chloride, % = ( C-D) x E x 0.03545 x 100/ B",compute="_compute_chloride_p",digits=(12, 3))
-    chloride_percent = fields.Float("G)Chloride, Kg/m3 = (F/100 x A)",compute="_compute_chloride_percent",digits=(12, 3))
+    chloride_percent = fields.Float("G)Chloride, Kg/m3 = (F/100 x A)",compute="_compute_chloride_percent",digits=(12, 2))
     # normality_of_ammonia = fields.Float("Normality of ammonia thiocynate (0.1)",digits=(16, 4))
     # chloride_percent = fields.Float("Chloride %",compute="_compute_chloride_percent",digits=(16, 4))
     @api.depends('chloride_valume', 'chloride_reading', 'chloride_normality', 'chloride_mass')
@@ -509,7 +509,7 @@ class ChemicalHasdenedConcrete(models.Model):
     chloride_visible2 = fields.Boolean("Chloride (prestressed concrete)",compute="_compute_visible")
 
     chloride_cube2 = fields.Float("A)Cube Density, Kg/m3")
-    chloride_mass2 = fields.Float("B) Mass of the concrete cube taken for analysis ( gm)")
+    chloride_mass2 = fields.Float("B) Mass of the concrete cube taken for analysis ( gm)",digits=(16, 4))
     chloride_valume2 = fields.Float("C) Volume of 0.02 N (Silver nitrate added) in blank")
     chloride_reading2 = fields.Float("D) Burette Reading of 0.1N Ammonium thiocynate  Consumed for  Sample) ( ml)")
     chloride_normality2 = fields.Float("E) Normality of 0.1 N Ammonium thiocynate solution ( N)")
@@ -594,11 +594,11 @@ class ChemicalHasdenedConcrete(models.Model):
 
 
     sample_wt_sulphate = fields.Float("A)Cement Content in concete %")
-    volume_make_upto_sulphate = fields.Float("B)Mass of the concrete cube sample taken for analysis ( gm)")
-    wt_empty_crucible_after_ignition = fields.Float("C) Wt. of Empty crusible gm")
-    wt_empty_crucible = fields.Float("D) Wt. of Empty crusible + Residue wt gm")
+    volume_make_upto_sulphate = fields.Float("B)Mass of the concrete cube sample taken for analysis ( gm)",digits=(16, 4))
+    wt_empty_crucible_after_ignition = fields.Float("C) Wt. of Empty crusible gm",digits=(16, 4))
+    wt_empty_crucible = fields.Float("D) Wt. of Empty crusible + Residue wt gm",digits=(16, 4))
     difference_in_wt_sulphate = fields.Float("E) Residue Wt,  gm = ( D - C )",compute="_compute_difference_in_wt_sulphate",digits=(16, 4))
-    sulphate_so3 = fields.Float("F)%Sulphate as SO3 = E x 34.3/B",compute="_compute_sulphate_so3",digits=(16, 4))
+    sulphate_so3 = fields.Float("F)%Sulphate as SO3 = E x 34.3/B",compute="_compute_sulphate_so3",digits=(16, 2))
     sulphate_percent = fields.Float("G)Sulphate as SO3 on the basis of Cement content (F)*100/A",compute="_compute_sulphate_percent",digits=(16, 2))
 
     @api.depends('wt_empty_crucible', 'wt_empty_crucible_after_ignition')

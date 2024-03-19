@@ -36,25 +36,27 @@
                         </h1>
                            
                     </group>
-                           <group attrs="{'invisible': [('Silica_visible', '=', False)]}">
+                           <!-- <group attrs="{'invisible': [('Silica_visible', '=', False)]}">
                                 <group>
-                                    <field name="siliceous1"/>
+                                   
                                 </group>
                                 <group>
-                                    <field name="calcareous1" />
+                                    
                                 </group>
-                            </group>
+                            </group> -->
                     
                     <group attrs="{'invisible': [('Silica_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap; width:60%">
+                            <field name="siliceous1"/>
+                            <field name="calcareous1" />
                             <field name="wt_of_sample"/>
-                            <br></br>
+                            
                             <field name="wt_of_two_rp"/>
-                             <br></br>
+                            
                             <field name="wt_of_two_r"/>
-                             <br></br>
+                             
                             <field name="difference_in_wt"/>
-                             <br></br>
+                            
                             <field name="Silica"/>
                        </group>
                     </group> 
@@ -77,26 +79,21 @@
                           
                     </group>
 
+                  
                     <group attrs="{'invisible': [('r2o3_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous2"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous2" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('r2o3_visible', '=', False)]}">
-                       <group>
+                        
                             <field name="wt_of_empty_combine"/>
-                            <br></br>
+                            
                             <field name="wt_of_cr_combine"/>
-                             <br></br>
+                             
                             <field name="wt_of_sample_combine"/>
-                             <br></br>
+                             
                             <field name="difference_in_wt_combaine"/>
-                             <br></br>
+                             
                             <field name="r2o3"/>
                        </group>
                     </group> 
@@ -119,26 +116,22 @@
                           
                     </group>
 
+                    
+
+
                     <group attrs="{'invisible': [('ferric_oxide_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous3"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous3" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('ferric_oxide_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_ferric_oxide"/>
-                            <br></br>
+                           
                             <field name="burette_ferric_oxide"/>
-                             <br></br>
+                            
                             <field name="normality_ferric_oxide"/>
-                             <br></br>
+                            
                             <field name="ferric_oxide"/>
-                             <br></br>
+                            
                            
                        </group>
                     </group> 
@@ -162,22 +155,13 @@
                           
                     </group>
 
+
                     <group attrs="{'invisible': [('alumina1_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous4"/>
-                        </group>
-                        <group>
                             <field name="calcareous4" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('alumina1_visible', '=', False)]}">
-                       <group>
                             <field name="alumina"/>
-                            <br></br>
-                           
-                           
+                          
                        </group>
                     </group> 
                      <group attrs="{'invisible': [('alumina1_visible', '=', False)]}">
@@ -199,28 +183,24 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('cao_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous5"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous5" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('cao_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_cao"/>
-                            <br></br>
+                            
                             <field name="burette_cao"/>
-                             <br></br>
+                             
                             <field name="normality_cao"/>
-                             <br></br>
+                             
                             <field name="dilution_cao"/>
-                             <br></br>
+                             
                               <field name="cao"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -243,28 +223,24 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('mgo_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%"> 
                             <field name="siliceous6"/>
-                        </group>
-                        <group>
+                       
                             <field name="calcareous6" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('mgo_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_mgo"/>
-                            <br></br>
+                            
                             <field name="burette_mgo"/>
-                             <br></br>
+                             
                             <field name="normality_mgo"/>
-                             <br></br>
+                             
                             <field name="dilution_mgo"/>
-                             <br></br>
+                             
                               <field name="mgo"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -288,28 +264,24 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('calicum_oxide_visible', '=', False)]}">
-                        <group>
-                            <field name="siliceous7"/>
-                        </group>
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
+                             <field name="siliceous7"/>
+                       
                             <field name="calcareous7" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('calicum_oxide_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_calicum_oxide"/>
-                            <br></br>
+                            
                             <field name="wt_cr_calicum_oxide"/>
-                             <br></br>
+                             
                             <field name="wt_empty_calicum_oxide"/>
-                             <br></br>
+                             
                             <field name="difference_calicum_oxide"/>
-                             <br></br>
+                             
                               <field name="calicum_oxide"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -334,28 +306,23 @@
                           
                     </group>
 
+                    
+
                     <group attrs="{'invisible': [('magnesium_oxide_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous8"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous8" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('magnesium_oxide_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_magnesium_oxide"/>
-                            <br></br>
+                           
                             <field name="wt_cr_magnesium_oxide"/>
-                             <br></br>
+                            
                             <field name="wt_empty_magnesium_oxide"/>
-                             <br></br>
+                            
                             <field name="difference_magnesium_oxide"/>
-                             <br></br>
+                            
                               <field name="magnesium_oxide"/>
-                             <br></br>
+                            
                            
                        </group>
                     </group> 
@@ -379,28 +346,24 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('so3_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous9"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous9" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('so3_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_so3"/>
-                            <br></br>
+                           
                             <field name="wt_cr_so3"/>
-                             <br></br>
+                            
                             <field name="wt_empty_co3"/>
-                             <br></br>
+                            
                             <field name="difference_co3"/>
-                             <br></br>
+                            
                               <field name="so3"/>
-                             <br></br>
+                            
                            
                        </group>
                     </group> 
@@ -424,30 +387,26 @@
                           
                     </group>
 
+                    
+
+
                     <group attrs="{'invisible': [('loi_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous10"/>
-                        </group>
-                        <group>
+                       
                             <field name="calcareous10" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('loi_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_empty_loi"/>
-                            <br></br>
+                            
                             <field name="wt_empty_cs_loi"/>
-                             <br></br>
+                             
                             <field name="wt_cs_loi"/>
-                             <br></br>
+                             
                             <field name="wt_of_sample_loi"/>
-                             <br></br>
+                             
                               <field name="loi_in_wt"/>
-                             <br></br>
+                             
                             <field name="loi"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -472,30 +431,27 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('na2o_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">   
                             <field name="siliceous11"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous11" />
-                        </group>
-                    </group>
 
-
-                    <group attrs="{'invisible': [('na2o_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_na2o"/>
-                            <br></br>
+                            
                             <field name="dilution_na2o"/>
-                             <br></br>
+                             
                             <field name="sodium_reading_na2o"/>
-                             <br></br>
+                             
                             <field name="ffg_na2o"/>
-                             <br></br>
+                             
                               <field name="na2o_calculation"/>
-                             <br></br>
+                             
                             <field name="na2o_round"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -519,30 +475,26 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('k2o_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous12"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous12" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('k2o_visible', '=', False)]}">
-                       <group>
                             <field name="wt_of_sample_k2o"/>
-                            <br></br>
+                            
                             <field name="dilution_k2o"/>
-                             <br></br>
+                             
                             <field name="potasium_reading_k2o"/>
-                             <br></br>
+                             
                             <field name="ffg_k2o"/>
-                             <br></br>
+                             
                               <field name="k2o_calculation"/>
-                             <br></br>
+                             
                             <field name="k2o_round"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -566,20 +518,18 @@
                           
                     </group>
 
+                    
+
+
                     <group attrs="{'invisible': [('available_alkalis_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
+                            
                             <field name="siliceous13"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous13" />
-                        </group>
-                    </group>
 
-
-                    <group attrs="{'invisible': [('available_alkalis_visible', '=', False)]}">
-                       <group>
                             <field name="available_alkalis"/>
-                            <br></br>
+                            
                            
                            
                        </group>
@@ -605,30 +555,26 @@
                           
                     </group>
 
+                   
+
+
                     <group attrs="{'invisible': [('chloride_visible', '=', False)]}">
-                        <group>
+                       <group style="white-space:nowrap; width:50%">
                             <field name="siliceous14"/>
-                        </group>
-                        <group>
+                        
                             <field name="calcareous14" />
-                        </group>
-                    </group>
-
-
-                    <group attrs="{'invisible': [('chloride_visible', '=', False)]}">
-                       <group>
                             <field name="burette_reading_chloride"/>
-                            <br></br>
+                            
                             <field name="burette_reading_sample_chloride"/>
-                             <br></br>
+                             
                             <field name="diff_chloride"/>
-                             <br></br>
+                             
                             <field name="normality_chloride"/>
-                             <br></br>
+                             
                               <field name="wt_of_sample_chloride"/>
-                             <br></br>
+                             
                             <field name="chloride"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -650,20 +596,16 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('combined_percentage_visible', '=', False)]}">
-                        <group>
-                            <field name="siliceous15"/>
-                        </group>
-                        <group>
-                            <field name="calcareous15" />
-                        </group>
-                    </group>
+                   
 
 
                      <group attrs="{'invisible': [('combined_percentage_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap; width:50%">
+                            <field name="siliceous15"/>
+                       
+                            <field name="calcareous15" />
                             <field name="combined_percentage"/>
-                            <br></br>
+                            
                            
                            
                        </group>

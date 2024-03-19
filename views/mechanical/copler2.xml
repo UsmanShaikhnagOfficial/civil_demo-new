@@ -42,23 +42,23 @@
                                     <field name='tests' options="{'no_create':True}" invisible="1"/>
                             </group> -->
 
-                            <group style="width:51%"> 
+                            <group style="white-space:nowrap; width:50%"> 
                                 <field name='diameter'/>
-                            </group>
-                             <group style="width:51%">
+                            <!-- </group>
+                             <group style="width:51%"> -->
                                 <field name='crossectional_area'/>
-                            </group>
-                            <group style="width:51%">
+                            <!-- </group>
+                            <group style="width:51%"> -->
                                 <field name='gauge_length'/>
-                            </group>
-                            <group style="width:51%">
+                            <!-- </group>
+                            <group style="width:51%"> -->
                                 <field name='elongated_gauge_length'/>
-                            </group>
-                            <group style="width:51%">
+                            <!-- </group>
+                            <group style="width:51%"> -->
                                 <field name='ultimate_load'/>
                             </group>
                             <group >
-                                <group style="width:25%">
+                                <group style="white-space:nowrap; width:25%">
                                 <field name='ult_tens_strgth'/>
                                 </group>
                                 <!-- <group style="width:25%">
@@ -80,7 +80,7 @@
 
 
                              <group >
-                                <group style="width:25%">
+                                <group style="white-space:nowrap; width:25%">
                                 <field name='total_elongation'/>
                                 </group>
                                 <!-- <group style="width:25%">
@@ -99,22 +99,23 @@
                                         readonly="1"/>
                                 </group>
                             </group>
-                            <group style="width:51%">
+                            <group style="white-space:nowrap; width:60%">
                                 <field name='distance'/>
-                            </group>
-                              <group style="width:51%">
+                            <!-- </group>
+                              <group style="width:51%"> -->
                                 <field name='location_of_failure'/>
-                            </group>
-                              <group style="width:51%">
+                            <!-- </group>
+                              <group style="width:51%"> -->
                                 <field name='result_test'/>
+                            
                             </group>
-                           
                             <button
                             type="object"
                             class="oe_highlight" 
                             name="open_eln_page"
                             string="Submit"
                             />
+                           
                            
               
 

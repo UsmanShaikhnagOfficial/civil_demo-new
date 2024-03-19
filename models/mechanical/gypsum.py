@@ -18,6 +18,10 @@ class GypsumMechanical(models.Model):
     eln_ref = fields.Many2one('lerm.eln',string="Eln")
     tests = fields.Many2many("mechanical.gypsum.test",string="Tests")
 
+    
+    grade = fields.Many2one('lerm.grade.line',string="Grade",compute="_compute_grade_id",store=True)
+
+
     # Normal Consistency 
 
     normal_consistency_name = fields.Char("Name",default="Normal Consistency")
@@ -244,6 +248,109 @@ class GypsumMechanical(models.Model):
                 record.testing_date_1days = False
 
 
+     # 7 Days Casting
+
+    casting_7_name = fields.Char("Name",default="7 Days")
+    # compressive_7_visible = fields.Boolean("7 days Visible",compute="_compute_visible")
+    days_7_done = fields.Boolean("Done")
+
+
+    casting_date_7days = fields.Date(string="Date of Casting")
+    testing_date_7days = fields.Date(string="Date of Testing",compute="_compute_testing_date_7days")
+    casting_7_days_tables = fields.One2many('gypsum.casting.7days.line','parent_id',string="7 Days")
+    average_casting_7days = fields.Float("Average",compute="_compute_average_7days")
+    status_7days = fields.Boolean("Done")
+    # compressive_strength_7_days = fields.Float("Compressive Strength",compute="_compute_compressive_strength_7days" ,digits=(16,1))
+
+    # compressive_7days_conformity = fields.Selection([
+    #     ('pass', 'Pass'),
+    #     ('fail', 'Fail'),
+    # ], string='Conformity', default='fail',compute="_compute_compressive_7days_conformity")
+
+    # compressive_7days_nabl = fields.Selection([
+    #     ('pass', 'Pass'),
+    #     ('fail', 'Fail'),
+    # ], string='NABL', default='fail',compute="_compute_compressive_7days_nabl")
+
+
+    # @api.depends('compressive_strength_7_days','eln_ref','grade')
+    # def _compute_compressive_7days_conformity(self):
+    #     for record in self:
+    #         record.compressive_7days_conformity = 'fail'
+    #         line = self.env['lerm.parameter.master'].search([('internal_id','=','a267dec2-59df-4c9d-827b-69778c31c29b')])
+    #         materials = self.env['lerm.parameter.master'].search([('internal_id','=','a267dec2-59df-4c9d-827b-69778c31c29b')]).parameter_table
+    #         for material in materials:
+    #             if material.grade.id == record.grade.id:
+    #                 req_min = material.req_min
+    #                 req_max = material.req_max
+    #                 mu_value = line.mu_value
+    #                 lower = record.compressive_strength_7_days - record.compressive_strength_7_days*mu_value
+    #                 upper = record.compressive_strength_7_days + record.compressive_strength_7_days*mu_value
+    #                 if lower >= req_min and upper <= req_max :
+    #                     record.compressive_7days_conformity = 'pass'
+    #                     break
+    #                 else:
+    #                     record.compressive_7days_conformity = 'fail'
+
+    # @api.depends('compressive_strength_7_days','eln_ref','grade')
+    # def _compute_compressive_7days_nabl(self):
+        
+    #     for record in self:
+    #         record.compressive_7days_nabl = 'fail'
+    #         line = self.env['lerm.parameter.master'].search([('internal_id','=','a267dec2-59df-4c9d-827b-69778c31c29b')])
+    #         materials = self.env['lerm.parameter.master'].search([('internal_id','=','a267dec2-59df-4c9d-827b-69778c31c29b')]).parameter_table
+            
+    #         lab_min = line.lab_min_value
+    #         lab_max = line.lab_max_value
+    #         mu_value = line.mu_value
+            
+    #         lower = record.compressive_strength_7_days - record.compressive_strength_7_days*mu_value
+    #         upper = record.compressive_strength_7_days + record.compressive_strength_7_days*mu_value
+    #         if lower >= lab_min and upper <= lab_max:
+    #             record.compressive_7days_nabl = 'pass'
+    #             break
+    #         else:
+    #             record.compressive_7days_nabl = 'fail'
+    
+
+    @api.depends('casting_7_days_tables.compressive_strength')
+    def _compute_average_7days(self):
+        for record in self:
+            try:
+                record.average_casting_7days = sum(record.casting_7_days_tables.mapped('compressive_strength'))/len(record.casting_7_days_tables)
+            except:
+                record.average_casting_7days = 0
+
+    @api.depends('casting_date_7days')
+    def _compute_testing_date_7days(self):
+        for record in self:
+            if record.casting_date_7days:
+                cast_date = fields.Datetime.from_string(record.casting_date_7days)
+                testing_date = cast_date + timedelta(days=7)
+                record.testing_date_7days = fields.Datetime.to_string(testing_date)
+            else:
+                record.testing_date_7days = False
+
+
+    # @api.depends('average_casting_7days')
+    # def _compute_compressive_strength_7days(self):
+    #     for record in self:
+    #         integer_part = math.floor(record.average_casting_7days)
+    #         fractional_part = record.average_casting_7days - integer_part
+    #         if fractional_part > 0 and fractional_part <= 0.25:
+    #             compressive_strength_7_days = round(integer_part,1)
+    #             record.compressive_strength_7_days = compressive_strength_7_days
+    #         elif fractional_part > 0.25 and fractional_part <= 0.75:
+    #             compressive_strength_7_days = round(integer_part + 0.5,1)
+    #             record.compressive_strength_7_days = compressive_strength_7_days
+    #         elif fractional_part > 0.75 and fractional_part <= 1:
+    #             compressive_strength_7_days = round(integer_part + 1,1)
+    #             record.compressive_strength_7_days = compressive_strength_7_days
+    #         else:
+    #             record.compressive_strength_7_days = 0
+
+
+
     @api.depends('tests')
     def _compute_visible(self):
         normal_consistency_test = self.env['mechanical.gypsum.test'].search([('name', '=', 'Normal Consistency')])
@@ -317,6 +424,11 @@ class GypsumMechanical(models.Model):
             record.sample_parameters = records
             print("Records",records)
 
+    @api.depends('eln_ref')
+    def _compute_grade_id(self):
+        if self.eln_ref:
+            self.grade = self.eln_ref.grade_id.id
+
     def get_all_fields(self):
         record = self.env['mechanical.gypsum'].browse(self.ids[0])
         field_values = {}
@@ -375,6 +487,34 @@ class Casting1DaysLineGypsum(models.Model):
                 record.compressive_strength = round(((record.crushing_load / record.crosssectional_area)*1000),3)
             else:
                 record.compressive_strength = 0
+
+
+
+class Casting7DaysLine(models.Model):
+    _name = "gypsum.casting.7days.line"
+
+    parent_id = fields.Many2one('mechanical.gypsum')
+
+    length = fields.Float("Length in mm")
+    width = fields.Float("Width in mm")
+    crosssectional_area = fields.Float("Crosssectional Area",compute="_compute_crosssectional_area")
+    wt_of_cement_cube = fields.Float("wt of Cement Cube in gm")
+    crushing_load = fields.Float("Crushing Load in KN")
+    compressive_strength = fields.Float("Compressive Strength (N/mm²)",compute="_compute_compressive_strength")
+
+    @api.depends('length','width')
+    def _compute_crosssectional_area(self):
+        for record in self:
+            record.crosssectional_area = round(record.length * record.width,2)
+
+    @api.depends('crosssectional_area','crushing_load')
+    def _compute_compressive_strength(self):
+        for record in self:
+            if record.crosssectional_area != 0:
+                record.compressive_strength = round((record.crushing_load / record.crosssectional_area)*1000,2)
+            else:
+                record.compressive_strength = 0
+
 
 
 class MechanicalTmtTest(models.Model):

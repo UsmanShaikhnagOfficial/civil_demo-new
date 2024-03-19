@@ -21,7 +21,7 @@
                         <field name="grade" exception="grade"  string="Grade" identity="extra"/> 
                     </group>
                      <group>
-                      <field name="sample_parameters">
+                      <field name="sample_parameters" style="width:50%">
                         <tree>
                           <field name="parameter_name"/>
                           <field name="test_method"/>
@@ -41,8 +41,8 @@
                         <group>
                             <field name="date_of_casting"  string="Date of Casting" identity="extra"/>
                         </group>
-                        <group>
-                            <field name="date_of_testing"  string="Date of Testing" identity="extra"/>
+                        <group style="width:30%">
+                            <field name="date_of_testing"  string="Date of Testing" identity="extra" />
                         </group>
                         <group>
                             <field name="age_of_days"/>
@@ -53,7 +53,7 @@
                         <group>
                             <field name="difference"/>
                         </group>
-                         <group>
+                         <group style="width:30%">
                          <field name='sample_condition'/>
                         </group>
                     </group>
@@ -62,13 +62,13 @@
                     </group>
 
                     <group>
-                      <group>
+                      <group style="white-space:nowrap; width:40%">
                          <field name='specime_prepared'/>
                          <field name='conditioning_started'/>
                          <field name='Vaccum_starte'/>
                          <field name='water_added'/>
                       </group>
-                       <group>
+                       <group style="white-space:nowrap; width:40%">
                          <field name='vaccum_turn_off'/>
                          <field name='soaking_started'/>
                          <field name='soaking_completed'/>
@@ -311,7 +311,7 @@
                    
 
                    
-
+             
                     <group>
                         <label for="specimen1_ov1" string="Absolute Value of applied Voltage, U" />
                         <div class="address_format " >
@@ -329,7 +329,7 @@
                           </group>
                         </div>
                     </group>
-                     <group>
+                     <group >
                         <label for="specimen1_ov2" string="Average Value of anolye solution °C ,T" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -347,7 +347,7 @@
                         </div>
                     </group>
 
-                    <group>
+                    <group >
                         <label for="specimen2" string="Thickness of specimen mm (L)" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -418,6 +418,7 @@
                           </group>
                         </div>
                     </group> 
+                  
                     <group>
                      <field name="overall_average"/>
                     </group>

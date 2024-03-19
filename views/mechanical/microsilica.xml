@@ -103,7 +103,7 @@
                     
                     <group attrs="{'invisible': [('compressive_visible', '=', False)]}">
 
-                      <field name="casting_date_7days"/>
+                      <field name="casting_date_7days" style="width:120px"/>
                       <field name="testing_date_7days"/>
                       
                       <field name="casting_7_days_tables">
@@ -174,7 +174,7 @@
 
                     <group attrs="{'invisible': [('compressive_visible', '=', False)]}">
 
-                      <field name="control_casting_date_7days"/>
+                      <field name="control_casting_date_7days" style="width:120px"/>
                       <field name="control_testing_date_7days"/>
                       
                       <field name="control_casting_7_days_tables">
@@ -357,7 +357,7 @@
                     
                     <group attrs="{'invisible': [('compressive_strength_visible', '=', False)]}">
 
-                      <field name="comp_casting_date_7days"/>
+                      <field name="comp_casting_date_7days" style="width:120px"/>
                       <field name="comp_testing_date_7days"/>
                       
                       <field name="comp_casting_7_days_tables">
@@ -430,7 +430,7 @@
                     
                     <group attrs="{'invisible': [('compressive_strength_visible', '=', False)]}">
 
-                      <field name="comp_control_castingdate_7days"/>
+                      <field name="comp_control_castingdate_7days" style="width:120px"/>
                       <field name="comp_control_testingdate_7days"/>
                       
                       <field name="comp_control_casting_7days_tables">
@@ -557,3 +557,6 @@
 
     </data>
 </odoo>
+
+
+

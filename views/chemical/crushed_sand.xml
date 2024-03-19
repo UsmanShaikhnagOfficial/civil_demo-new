@@ -285,7 +285,7 @@
                             <field name="chloride_visible" invisible="1"/>
                         </h1>
                     </group>
-                    <group attrs="{'invisible': [('chloride_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('chloride_visible', '=', False)]}" style="white-space:nowrap; width:50%">
                       <field name="sample_wt_chloride"/>
                       <field name="volume_make_upto_chloride"/>
                       <field name="aliqote_taken_chloride"/>
@@ -314,7 +314,7 @@
                         </h1>
                     </group>
 
-                    <group attrs="{'invisible': [('sulphate_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('sulphate_visible', '=', False)]}" style="white-space:nowrap; width:50%">
                       <field name="sample_wt_sulphate"/>
                       <field name="volume_make_upto_sulphate"/>
                       <field name="aliqote_taken_sulphate"/>
@@ -331,6 +331,88 @@
                                decoration-danger="sulphate_conformity == 'fail'" 
                                readonly="1"/>
                         <field name='avrg_avrg_sulphate_nabl'/>
+                    </group> 
+
+
+
+
+                      <!--      Alkali as Na₂O Clause  4.11.4 ( By Flame Photometer)  -->
+                    <group attrs="{'invisible': [('na2O_name_visible', '=', False)]}">
+                        <h1>
+                            <field name="na2O_name" readonly="1" nolabel="1"/>
+                            <field name="na2O_name_visible" invisible="1"/>
+                        </h1>
+                    </group>
+
+                    <group attrs="{'invisible': [('na2O_name_visible', '=', False)]}">
+                      <field name="sample_wt_na2O"/>
+                      <field name="dilution_na2O"/>
+                      <field name="sidium_reading_na2O"/>
+                      <field name="factor_graph_na2O"/>
+                      <field name="dilution_reading_na2O"/>
+                      <field name="na2O"/>
+
+                    </group>
+                      <group attrs="{'invisible': [('na2O_name_visible', '=', False)]}">
+                          
+                        <field name='na2O_conformity'
+                               decoration-success="na2O_conformity == 'pass'" 
+                               decoration-danger="na2O_conformity == 'fail'" 
+                               readonly="1"/>
+                        <field name='na2O_nabl'/>
+                    </group> 
+
+
+
+                      <!--       Alkali as K₂O Clause  4.11.4 ( By Flame Photometer)  -->
+                    <group attrs="{'invisible': [('k2O_name_visible', '=', False)]}">
+                        <h1>
+                            <field name="k2O_name" readonly="1" nolabel="1"/>
+                            <field name="k2O_name_visible" invisible="1"/>
+                        </h1>
+                    </group>
+
+                    <group attrs="{'invisible': [('k2O_name_visible', '=', False)]}">
+                      <field name="sample_wt_k2O"/>
+                      <field name="dilution_k2O"/>
+                      <field name="sidium_reading_k2O"/>
+                      <field name="factor_graph_k2O"/>
+                      <field name="dilution_reading_k2O"/>
+                      <field name="k2O"/>
+
+                    </group>
+                      <group attrs="{'invisible': [('k2O_name_visible', '=', False)]}">
+                          
+                        <field name='k2O_conformity'
+                               decoration-success="k2O_conformity == 'pass'" 
+                               decoration-danger="k2O_conformity == 'fail'" 
+                               readonly="1"/>
+                        <field name='k2O_nabl'/>
+                    </group> 
+
+
+
+
+                     <!--   Total Alkali as content Clause  4.11.4 ( By Flame Photometer)  -->
+                    <group attrs="{'invisible': [('total_alkali_content_visible', '=', False)]}">
+                        <h1>
+                            <field name="total_alkali_content_name" readonly="1" nolabel="1"/>
+                            <field name="total_alkali_content_visible" invisible="1"/>
+                        </h1>
+                    </group>
+
+                    <group attrs="{'invisible': [('total_alkali_content_visible', '=', False)]}">
+                      <field name="total_alkali_content"/>
+                     
+
+                    </group>
+                      <group attrs="{'invisible': [('total_alkali_content_visible', '=', False)]}">
+                          
+                        <field name='total_alkali_content_conformity'
+                               decoration-success="total_alkali_content_conformity == 'pass'" 
+                               decoration-danger="total_alkali_content_conformity == 'fail'" 
+                               readonly="1"/>
+                        <field name='total_alkali_content_nabl'/>
                     </group> 
                 </sheet>
             </form>

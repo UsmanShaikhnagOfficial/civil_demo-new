@@ -15,19 +15,19 @@
                             <field name="name" readonly="1" nolabel="1"/>
                         </h1>
                         
-                        <group style="width:50%">
+                        <group style="width:30%">
                             <field name="temp_percent_normal"/>
                             <field name="humidity_percent_normal"/>
                         </group>
 
-                        <group style="width:50%">
+                        <group style="width:30%">
                             <field name="start_date"/>
                             <field name="end_date"/>
                         </group>
 
 
                         <field name="child_lines" widget="one2many_list">
-                            <tree editable="bottom">
+                            <tree>
                                 <field name="water_cement_ratio"/>
                                 <field name="admixture_dosage_percent"/>
                                 <field name="wt_of_cement"/>

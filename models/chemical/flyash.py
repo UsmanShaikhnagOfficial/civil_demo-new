@@ -22,9 +22,9 @@ class ChemicalFlyAsh(models.Model):
     siliceous1 = fields.Char(string="Siliceous Pulverized Fuel Ash",default="35.0 Min")
     calcareous1 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="25.0 Min")
 
-    wt_of_sample = fields.Float("Wt of sample taken W1 (gm)")
-    wt_of_two_rp = fields.Float("Wt of two residue and paper after ignition at 1100˚C in crucible gm")
-    wt_of_two_r = fields.Float("Weight of residues in crucible after HF at 1100˚C gm")
+    wt_of_sample = fields.Float("Wt of sample taken W1 (gm)",digits=(16, 4))
+    wt_of_two_rp = fields.Float("Wt of two residue and paper after ignition at 1100˚C in crucible gm",digits=(16, 4))
+    wt_of_two_r = fields.Float("Weight of residues in crucible after HF at 1100˚C gm",digits=(16, 4))
     difference_in_wt = fields.Float("Difference in weight = ( B - C )",compute="_compute_difference_in_wt",digits=(16, 4))
     Silica = fields.Float("SiO₂ = D x 100/A",compute="_compute_silica_percentage")
 
@@ -102,10 +102,10 @@ class ChemicalFlyAsh(models.Model):
     siliceous2 = fields.Char(string="Siliceous Pulverized Fuel Ash" ,default="70.0 Min")
     calcareous2 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="50.0 Min")
 
-    wt_of_empty_combine = fields.Float("Wt of empty crucible (gm)")
-    wt_of_cr_combine = fields.Float("Wt of  empty  crucible + residue (gm)")
-    wt_of_sample_combine = fields.Float("Wt of sample (gm)")
-    difference_in_wt_combaine = fields.Float("Difference in weight = (B - A)",compute="_compute_difference_in_wt_combaine")
+    wt_of_empty_combine = fields.Float("Wt of empty crucible (gm)",digits=(16, 4))
+    wt_of_cr_combine = fields.Float("Wt of  empty  crucible + residue (gm)",digits=(16, 4))
+    wt_of_sample_combine = fields.Float("Wt of sample (gm)",digits=(16, 4))
+    difference_in_wt_combaine = fields.Float("Difference in weight = (B - A)",compute="_compute_difference_in_wt_combaine",digits=(16, 4))
     r2o3 = fields.Float("Combined Ferric Oxide and Alumina (R2O3) = D x 100/C",compute="_compute_r2o3")
 
 
@@ -182,7 +182,7 @@ class ChemicalFlyAsh(models.Model):
     siliceous3 = fields.Char(string="Siliceous Pulverized Fuel Ash",default="--")
     calcareous3 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="--")
 
-    wt_of_sample_ferric_oxide = fields.Float("Wt of sample (gm)")
+    wt_of_sample_ferric_oxide = fields.Float("Wt of sample (gm)",digits=(16, 4))
     burette_ferric_oxide  = fields.Float("Burette reading of KMnO4 for sampl (ml)")
     normality_ferric_oxide = fields.Float("Normality of KMnO4")
     ferric_oxide = fields.Float("Ferric Oxide = B x Cx 0.05585 x 1.43 x 100/A",compute="_compute_ferric_oxide")
@@ -324,7 +324,7 @@ class ChemicalFlyAsh(models.Model):
     siliceous5 = fields.Char(string="Siliceous Pulverized Fuel Ash")
     calcareous5 = fields.Char(string="Calcareous Pulverized Fuel Ash")
 
-    wt_of_sample_cao = fields.Float("Wt of sample (gm)")
+    wt_of_sample_cao = fields.Float("Wt of sample (gm)",digits=(16, 4))
     burette_cao  = fields.Float("BR of 0.01N EDTA")
     normality_cao = fields.Float("Normality OF EDTA")
     dilution_cao = fields.Float("Dilution")
@@ -401,7 +401,7 @@ class ChemicalFlyAsh(models.Model):
     siliceous6 = fields.Char(string="Siliceous Pulverized Fuel Ash",default="5.0 Max")
     calcareous6 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="5.0 Max")
 
-    wt_of_sample_mgo = fields.Float("Wt of sample (gm)")
+    wt_of_sample_mgo = fields.Float("Wt of sample (gm)",digits=(16, 4))
     burette_mgo  = fields.Float("BR of 0.01N EDTA")
     normality_mgo = fields.Float("Normality OF EDTA")
     dilution_mgo = fields.Float("Dilution")
@@ -477,10 +477,10 @@ class ChemicalFlyAsh(models.Model):
     siliceous7 = fields.Char(string="Siliceous Pulverized Fuel Ash")
     calcareous7 = fields.Char(string="Calcareous Pulverized Fuel Ash")
 
-    wt_of_sample_calicum_oxide = fields.Float("sample wt (gm)")
-    wt_cr_calicum_oxide  = fields.Float("wt of crucible + residue (gm)")
-    wt_empty_calicum_oxide = fields.Float("wt of empty crucible (gm)")
-    difference_calicum_oxide = fields.Float("Difference = ( B - C ) gm",compute="_compute_difference_calicum_oxide")
+    wt_of_sample_calicum_oxide = fields.Float("sample wt (gm)",digits=(16, 4))
+    wt_cr_calicum_oxide  = fields.Float("wt of crucible + residue (gm)",digits=(16, 4))
+    wt_empty_calicum_oxide = fields.Float("wt of empty crucible (gm)",digits=(16, 4))
+    difference_calicum_oxide = fields.Float("Difference = ( B - C ) gm",compute="_compute_difference_calicum_oxide",digits=(16, 4))
     calicum_oxide = fields.Float("% CaO = D  x 100/A",compute="_compute_calicum_oxide")
 
 
@@ -560,10 +560,10 @@ class ChemicalFlyAsh(models.Model):
     siliceous8 = fields.Char(string="Siliceous Pulverized Fuel Ash",default="5.0 Max")
     calcareous8 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="5.0 Max")
 
-    wt_of_sample_magnesium_oxide = fields.Float("sample wt (gm)")
-    wt_cr_magnesium_oxide = fields.Float("wt of crucible + residue (gm)")
-    wt_empty_magnesium_oxide = fields.Float("wt of empty crucible (gm)")
-    difference_magnesium_oxide = fields.Float("Difference = ( B - C ) gm", compute="_compute_difference_magnesium_oxide")
+    wt_of_sample_magnesium_oxide = fields.Float("sample wt (gm)",digits=(16, 4))
+    wt_cr_magnesium_oxide = fields.Float("wt of crucible + residue (gm)",digits=(16, 4))
+    wt_empty_magnesium_oxide = fields.Float("wt of empty crucible (gm)",digits=(16, 4))
+    difference_magnesium_oxide = fields.Float("Difference = ( B - C ) gm", compute="_compute_difference_magnesium_oxide",digits=(16, 4))
     magnesium_oxide = fields.Float("% MgO = D x 0.3621 x 100/A", compute="_compute_magnesium_oxide")
 
     @api.depends('wt_cr_magnesium_oxide', 'wt_empty_magnesium_oxide')
@@ -638,9 +638,9 @@ class ChemicalFlyAsh(models.Model):
     siliceous9 = fields.Char(string="Siliceous Pulverized Fuel Ash",default="3.0 Max")
     calcareous9 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="3.0 Max")
 
-    wt_of_sample_so3 = fields.Float("sample wt (gm)")
-    wt_cr_so3 = fields.Float("wt of crucible + residue (gm)")
-    wt_empty_co3 = fields.Float("wt of empty crucible (gm)")
+    wt_of_sample_so3 = fields.Float("sample wt (gm)",digits=(16, 4))
+    wt_cr_so3 = fields.Float("wt of crucible + residue (gm)",digits=(16, 4))
+    wt_empty_co3 = fields.Float("wt of empty crucible (gm)",digits=(16, 4))
     difference_co3 = fields.Float("Residue weight = (B - C) gm", compute="_compute_difference_so3",digits=(16, 4))
     so3 = fields.Float("% Sulphur trioxide (SO3)", compute="_compute_so3")
 
@@ -715,9 +715,9 @@ class ChemicalFlyAsh(models.Model):
     siliceous10 = fields.Char(string="Siliceous Pulverized Fuel Ash",default="5.0 Max")
     calcareous10 = fields.Char(string="Calcareous Pulverized Fuel Ash",default="5.0 Max")
 
-    wt_of_empty_loi = fields.Float("wt of empty crucible (gm)")
-    wt_empty_cs_loi = fields.Float("wt of empty crucible + sample before ignition gm")
-    wt_cs_loi = fields.Float("wt of crucible + sample after ignition gm")
+    wt_of_empty_loi = fields.Float("wt of empty crucible (gm)",digits=(16, 4))
+    wt_empty_cs_loi = fields.Float("wt of empty crucible + sample before ignition gm",digits=(16, 4))
+    wt_cs_loi = fields.Float("wt of crucible + sample after ignition gm",digits=(16, 4))
     wt_of_sample_loi = fields.Float("Wt of sample gm = B - C", compute="_compute_wt_of_sample_loi",digits=(16, 4))
     loi_in_wt = fields.Float("Loss in weight = B - A", compute="_compute_loi_in_wt",digits=(16, 4))
     loi = fields.Float("Loss on ignition = E x 100/ D", compute="_compute_loi")
@@ -802,7 +802,7 @@ class ChemicalFlyAsh(models.Model):
     siliceous11 = fields.Char(string="Siliceous Pulverized Fuel Ash" , default="--")
     calcareous11 = fields.Char(string="Calcareous Pulverized Fuel Ash", default="--")
 
-    wt_of_sample_na2o = fields.Float("Weight of sample taken")
+    wt_of_sample_na2o = fields.Float("Weight of sample taken",digits=(16, 4))
     dilution_na2o = fields.Float("Dilution")
     sodium_reading_na2o = fields.Float("Sodium reading")
     ffg_na2o = fields.Float("Factor from graph")
@@ -885,7 +885,7 @@ class ChemicalFlyAsh(models.Model):
     siliceous12 = fields.Char(string="Siliceous Pulverized Fuel Ash" , default="--")
     calcareous12 = fields.Char(string="Calcareous Pulverized Fuel Ash", default="--")
 
-    wt_of_sample_k2o = fields.Float("Weight of sample taken")
+    wt_of_sample_k2o = fields.Float("Weight of sample taken",digits=(16, 4))
     dilution_k2o = fields.Float("Dilution")
     potasium_reading_k2o = fields.Float("Potasium reading")
     ffg_k2o = fields.Float("Factor from graph")

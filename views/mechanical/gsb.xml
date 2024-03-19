@@ -66,7 +66,7 @@
                             <field name="water_absorbtion_visible" invisible="1"/>
                         </h1>
                     </group>
-                    <group attrs="{'invisible': [('water_absorbtion_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('water_absorbtion_visible', '=', False)]}" style="white-space:nowrap; width:60%">
                         <field name="wt_ssd_sample"/>
                         <field name="oven_dried_wt"/>
                         <field name="water_absorbtion"/>
@@ -93,29 +93,29 @@
                         </field>
                     </group>
                     
-                    <group attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}">
+                    <group attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}" style="white-space:nowrap;">
                             
-                        <group style="width:33%">
+                        <group>
                             <field name="total_wt_retained_fl_el"/>
-                        </group>
-                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}">
+                        <!-- </group>
+                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}"> -->
                             <field name="total_elongated_retained"/>
-                        </group>
-                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}">
+                         <!-- </group> -->
+                        <!-- <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}"> -->
                             <field name="total_flakiness_retained"/>
                         </group>
                         
-                    </group>
+                   
                      
-                    <group style="width:100%">
+                    <!-- <group style="width:100%"> -->
                         
-                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}">
+                        <group>
                             <field name="aggregate_elongation"/>
-                        </group>
-                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}">
+                        <!-- </group>
+                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}"> -->
                             <field name="aggregate_flakiness"/>
-                        </group>
-                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}">
+                        <!-- </group>
+                        <group style="width:33%" attrs="{'invisible': ['|', ('elongation_visible', '=', False), ('flakiness_visible', '=', False)]}"> -->
                             <field name="aggregate_combine"/>
                         </group>
                     </group>
@@ -155,7 +155,7 @@
 
                         </h1>
                 </group>
-                <group attrs="{'invisible': [('abrasion_visible', '=', False)]}">
+                <group attrs="{'invisible': [('abrasion_visible', '=', False)]}" style="white-space:nowrap; width:50%">
                     <field name="total_weight_sample_abrasion"/>
                     <field name="weight_passing_sample_abrasion"/>
                     <field name="weight_retain_sample_abrasion"/>
@@ -186,7 +186,7 @@
                            
                     </field> 
                 </group>
-                    <group attrs="{'invisible': [('liquid_limit_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('liquid_limit_visible', '=', False)]}" style="width:50%">
                         <field name="liquid_limit"/>
                         <field name="remarks_liquid_limit"/>
                     </group>
@@ -216,7 +216,7 @@
                 </group>
                     <group attrs="{'invisible': [('plastic_visible', '=', False)]}">
                         <field name="average_plastic_moisture"/>
-                        <field name="remarks_plastic"/>
+                        <field name="remarks_plastic" style="width:30%"/>
                     </group>
 
                 <!-- Plasticity index  -->
@@ -233,7 +233,7 @@
 
                         </h1>
                 </group>
-                <group attrs="{'invisible': [('density_relation_visible', '=', False)]}">
+                <group attrs="{'invisible': [('density_relation_visible', '=', False)]}" style="width:50%">
                     <field name="wt_of_modul" />
                     <field name="vl_of_modul" />
                 </group>

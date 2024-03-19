@@ -41,7 +41,7 @@
                         </h1>
                     </group>
                     
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}" style="white-space:nowrap; width:30%">
                         
                         <label for="wt_of_cement_trial1" string="Wt. of Cement(g)" />
                         <div class="address_format " >
@@ -51,45 +51,41 @@
                           </group>
                           
                         </div>
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
-                        
-                        
-                          <group >
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}" style="white-space:nowrap;">   -->
+                          <!-- <group > -->
                             <!-- <label for="wt_of_ggbs_trial1" string="Trial 1" /> -->
                             <field  name="wt_of_ggbs_trial1"  colspan="3" />
-                          </group>
+                          <!-- </group> -->
                           
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
-                        
-                          <group >
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
+                          <!-- <group > -->
                             <!-- <label for="total_wt_sample" string="Trial 1" /> -->
                             <field  name="total_wt_sample"  colspan="3"/>
-                          </group>
+                          <!-- </group> -->
                           
-                        
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                        
-                          <group >
+                          <!-- <group > -->
                             <field  name="wt_water_req"  colspan="3"  />
-                          </group>
+                          <!-- </group> -->
                           
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         
-                          <group >
+                          <!-- <group > -->
                             
                             <field  name="penetration_vicat"  colspan="3"  />
-                          </group>
+                          <!-- </group> -->
                          
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         
-                          <group >
+                          <!-- <group > -->
                             <field  name="normal_consistency"  colspan="3"  />
-                          </group>
+                          <!-- </group> -->
                           
                     </group>
 
@@ -102,7 +98,7 @@
                         </h1>
                     </group>
 
-                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}" style="white-space:nowrap; width:30%">
                         
                         <label for="wt_cement" string="Wt. of Cement(g)" />
                         <div class="address_format " >
@@ -112,29 +108,28 @@
                           </group>
                           
                         </div>
-                    </group>
+                    <!-- </group>
                     
                    
-                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}"> -->
                        
-                          <group >
+                         
                             <field  name="wt_water_req_cement"  colspan="3"  />
-                          </group>
                           
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}"> -->
                         
-                          <group >
+                          
                             
                             <field  name="penetration_vicat_cement"  colspan="3"  />
-                          </group>
+                          
                          
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_cement_visible', '=', False)]}"> -->
                         
-                          <group >
+                          
                             <field  name="normal_consistency_cement"  colspan="3"  />
-                          </group>
+                          
                           
                     </group>
 
@@ -238,7 +233,7 @@
                     <group attrs="{'invisible': ['|', ('slag_activity_7_visible', '=', False), ('slag_activity_28_visible', '=', False)]}">
                      <h5>Compressive Strength of the mortar cube using GGBS</h5>
                     </group>
-                    <group attrs="{'invisible': ['|', ('slag_activity_7_visible', '=', False), ('slag_activity_28_visible', '=', False)]}" style="width:40%">
+                    <group attrs="{'invisible': ['|', ('slag_activity_7_visible', '=', False), ('slag_activity_28_visible', '=', False)]}" style="white-space:nowrap; width:40%">
 
                       <field  name="wt_of_cement_slag"  colspan="3" />
                       <field  name="wt_of_ggbs_slag"  colspan="3" />
@@ -266,7 +261,7 @@
                     <group attrs="{'invisible': [('slag_activity_7_visible', '=', False)]}">
 
 
-                      <field name="casting_date_7days"/>
+                      <field name="casting_date_7days" style="width:100px"/>
                       <field name="testing_date_7days"/>
                       
                       <field name="slag_7days_table">
@@ -298,7 +293,7 @@
                     <group attrs="{'invisible': [('slag_activity_28_visible', '=', False)]}">
 
 
-                      <field name="casting_date_28days"/>
+                      <field name="casting_date_28days" style="width:100px"/>
                       <field name="testing_date_28days"/>
                       
                       <field name="slag_28days_table">
@@ -318,7 +313,7 @@
                     <group attrs="{'invisible': ['|', ('slag_activity_7_visible', '=', False), ('slag_activity_28_visible', '=', False)]}">
                       <h5>Compressive Strength of the control OPC mortar cube</h5>
                     </group>
-                    <group attrs="{'invisible': ['|', ('slag_activity_7_visible', '=', False), ('slag_activity_28_visible', '=', False)]}" style="width:40%">
+                    <group attrs="{'invisible': ['|', ('slag_activity_7_visible', '=', False), ('slag_activity_28_visible', '=', False)]}" style="white-space:nowrap; width:40%">
                       <field  name="wt_of_cement_slag_opc"  colspan="3" />
                       <field  name="wt_of_standard_sand_grade1_opc"  colspan="3" />
                       <field  name="wt_of_standard_sand_grade2_opc"  colspan="3" />
@@ -345,7 +340,7 @@
                     <group attrs="{'invisible': [('slag_activity_7_visible', '=', False)]}">
 
 
-                      <field name="casting_date_7days_opc"/>
+                      <field name="casting_date_7days_opc" style="width:100px"/>
                       <field name="testing_date_7days_opc"/>
                       
                       <field name="slag_7days_table_opc">
@@ -377,7 +372,7 @@
                     <group attrs="{'invisible': [('slag_activity_28_visible', '=', False)]}">
 
 
-                      <field name="casting_date_28days_opc"/>
+                      <field name="casting_date_28days_opc" style="width:100px"/>
                       <field name="testing_date_28days_opc"/>
                       
                       <field name="slag_28days_table_opc">
@@ -448,7 +443,7 @@
                           </group>
                         </div>
                     </group>
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" style="white-space:nowrap; width:60%">
                           <group>
                             <field  name="density_of_mercury"  colspan="6" />
                           </group>
@@ -466,15 +461,15 @@
                           </group>
                         </div>
                     </group>
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
-                          <group>
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" style="white-space:nowrap; width:50%">
+                         
                             <field  name="average_bed_volume"  colspan="6"/>
-                          </group>
-                    </group>
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">                        
-                          <group >
+                          
+                    <!-- </group>
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" style="white-space:nowrap; width:50%">                         -->
+                          
                             <field  name="difference_between_2_values"  colspan="6"/>
-                          </group>
+                          
                     </group>
                     <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
                       <h6>Repeat the procedure  with fresh cement beds until two values of V are obtained differing by less than 0.005 cm3.Record the mean of these two values as V</h6>
@@ -483,10 +478,10 @@
                       <h5>Determination of Apparatus Constant (k)</h5>
                     </group>
                     
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">                        
-                          <group >
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" style="white-space:nowrap;">                        
+                          
                             <field  name="mass_of_sample_taken_fineness_reference"  colspan="6"/>
-                          </group>
+                          
                     </group>
                     <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
                       <h6>Take an amount (m1),g. of standard sample so as to give the sample bed of porosity e=0.500</h6>
@@ -530,7 +525,7 @@
                             <field  name="average_time_fineness"  colspan="6"/>
                           </group>
                     </group>
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">                        
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" style="white-space:nowrap; width:50%">                        
                           <field name="specific_surface_of_reference_sample"/>
                           <field name="air_viscosity_of_three_temp"/>
                           <field name="density_of_reference_sample"/>
@@ -543,15 +538,15 @@
                     <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
                       <h6>*Using the sample whose fineness is to be calculated.</h6>
                     </group>
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
-                          <group>
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" style="white-space:nowrap;">
+                          
                             <field  name="sg_fineness_calculated"  colspan="6"/>
-                          </group>
-                    </group>
-                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}">                        
-                          <group >
+                          
+                    <!-- </group>
+                    <group attrs="{'invisible': [('fineness_visible', '=', False)]}" >                         -->
+                         
                             <field  name="mass_of_sample_taken_fineness_calculated"  colspan="6"/>
-                          </group>
+                          
                     </group>
                     <group attrs="{'invisible': [('fineness_visible', '=', False)]}">
                         <label for="time_sample_trial1" string="Time(t),sec." />

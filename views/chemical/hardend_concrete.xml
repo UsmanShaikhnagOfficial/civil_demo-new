@@ -74,21 +74,21 @@
                         </h1>
                     </group>
                     <group attrs="{'invisible': [('chloride_visible', '=', False)]}">
-                      <group>
+                      <group style="white-space:nowrap; width:70%">
                             <field name="chloride_cube"/>
-                            <br></br>
+                            
                             <field name="chloride_mass"/>
-                             <br></br>
+                             
                             <field name="chloride_valume"/>
-                             <br></br>
+                             
                             <field name="chloride_reading"/>
-                             <br></br>
+                             
                               <field name="chloride_normality"/>
-                             <br></br>
+                             
                             <field name="chloride_p"/>
-                             <br></br>
+                             
                             <field name="chloride_percent"/>
-                             <br></br>
+                             
                            
                        </group>
 
@@ -110,21 +110,21 @@
                         </h1>
                     </group>
                     <group attrs="{'invisible': [('chloride_visible2', '=', False)]}">
-                      <group>
+                      <group style="white-space:nowrap; width:70%">
                             <field name="chloride_cube2"/>
-                            <br></br>
+                            
                             <field name="chloride_mass2"/>
-                             <br></br>
+                             
                             <field name="chloride_valume2"/>
-                             <br></br>
+                             
                             <field name="chloride_reading2"/>
-                             <br></br>
+                             
                               <field name="chloride_normality2"/>
-                             <br></br>
+                             
                             <field name="chloride_p2"/>
-                             <br></br>
+                             
                             <field name="chloride_percent2"/>
-                             <br></br>
+                             
                            
                        </group>
 
@@ -148,21 +148,21 @@
                         </h1>
                     </group>
                     <group attrs="{'invisible': [('chloride_visible1', '=', False)]}">
-                      <group>
+                      <group style="white-space:nowrap; width:60%">
                             <field name="chloride_density"/>
-                            <br></br>
+                            
                             <field name="chloride_mass1"/>
-                             <br></br>
+                             
                             <field name="chloride_valume1"/>
-                             <br></br>
+                             
                             <field name="chloride_reading1"/>
-                             <br></br>
+                             
                               <field name="diff"/>
-                             <br></br>
+                             
                             <field name="chloride_calculation"/>
-                             <br></br>
+                             
                             <field name="chloride_acide"/>
-                             <br></br>
+                             
                            
                        </group>
 
@@ -186,21 +186,21 @@
                     </group>
 
                     <group attrs="{'invisible': [('sulphate_visible', '=', False)]}">
-                      <group>
+                      <group style="white-space:nowrap; width:60%">
                       <field name="sample_wt_sulphate"/>
-                        <br></br>
+                       
                       <field name="volume_make_upto_sulphate"/>
-                        <br></br>
+                       
                       <field name="wt_empty_crucible_after_ignition"/>
-                        <br></br>
+                       
                       <field name="wt_empty_crucible"/>
-                        <br></br>
+                       
                       <field name="difference_in_wt_sulphate"/>
-                        <br></br>
+                       
                       <field name="sulphate_so3"/>
-                        <br></br>
+                       
                       <field name="sulphate_percent"/>
-                        <br></br>
+                       
                       </group>
 
                     </group>
@@ -220,7 +220,7 @@
                             <field name="alkali_aggregate_dissolved_visible" invisible="1"/>
                         </h1>
                     </group>
-                    <group attrs="{'invisible': [('alkali_aggregate_dissolved_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('alkali_aggregate_dissolved_visible', '=', False)]}" style="white-space:nowrap; width:50%">
                         <field name="wt_blank_crucible_after_ignition"/>
                         <field name="wt_blank_crucible_after_hf"/>
                         <field name="diff_in_wt_of_silica_blank"/>

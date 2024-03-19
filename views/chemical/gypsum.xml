@@ -88,36 +88,33 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('loi_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('loi_visible', '=', False)]}" style="white-space:nowrap;">
                          <group>
                             <field name="plaster2"/>
-                        </group>
-                        <group>
-                            <field name="retarded2" />
-                        </group>
-                          <group>
                             <field name="anhydrous2"/>
                         </group>
                         <group>
-                            <field name="keenes2" />
+                            <field name="retarded2" />
+                             <field name="keenes2" />
                         </group>
+                         
                     </group>
 
 
                     <group attrs="{'invisible': [('loi_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap; width:60%">
                             <field name="wt_of_empty_loi"/>
-                            <br></br>
+                            
                             <field name="wt_empty_cs_loi"/>
-                             <br></br>
+                             
                             <field name="wt_cs_loi"/>
-                             <br></br>
+                             
                             <field name="wt_of_sample_loi"/>
-                             <br></br>
+                             
                               <field name="loi_in_wt"/>
-                             <br></br>
+                             
                             <field name="loi"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -140,33 +137,30 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('cao_visible', '=', False)]}">
-                         <group>
+                    <group attrs="{'invisible': [('cao_visible', '=', False)]}" >
+                         <group style="white-space:nowrap;">
                             <field name="plaster3"/>
+                             <field name="anhydrous3"/>
                         </group>
-                        <group>
+                        <group style="white-space:nowrap;">
                             <field name="retarded3" />
+                             <field name="keenes3" />
                         </group>
-                          <group>
-                            <field name="anhydrous3"/>
-                        </group>
-                        <group>
-                            <field name="keenes3" />
-                        </group>
+                          
                     </group>
 
 
                     <group attrs="{'invisible': [('cao_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap;">
                             <field name="wt_of_sample_cao1"/>
-                            <br></br>
+                            
                             <field name="burette_cao1"/>
-                             <br></br>
+                             
                             <field name="normality_cao1"/>
-                             <br></br>
+                             
                            
                               <field name="cao1"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -189,34 +183,33 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('mgo_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('mgo_visible', '=', False)]}" style="white-space:nowrap;">
                          <group>
                             <field name="plaster4"/>
-                        </group>
-                        <group>
-                            <field name="retarded4" />
-                        </group>
-                          <group>
                             <field name="anhydrous4"/>
                         </group>
                         <group>
-                            <field name="keenes4" />
+                            <field name="retarded4" />
+                             <field name="keenes4" />
                         </group>
+                          
                     </group>
 
 
-                    <group attrs="{'invisible': [('mgo_visible', '=', False)]}">
-                       <group>
+                    <group attrs="{'invisible': [('mgo_visible', '=', False)]}" >
+                       <group style="white-space:nowrap;">
                             <field name="wt_of_sample_mgo1"/>
-                            <br></br>
+                           
                             <field name="burette_mgo1"/>
-                             <br></br>
+                            
                             <field name="normality_mgo1"/>
-                             <br></br>
+                            
                             <field name="dilution_mgo1"/>
-                             <br></br>
+                            
+                             <field name="dilution_mgo2"/>
+                            
                               <field name="mgo1"/>
-                             <br></br>
+                            
                            
                        </group>
                     </group> 
@@ -241,35 +234,32 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('cao_visible2', '=', False)]}">
+                    <group attrs="{'invisible': [('cao_visible2', '=', False)]}" style="white-space:nowrap;">
                          <group>
                             <field name="plaster5"/>
+                             <field name="anhydrous5"/>
                         </group>
                         <group>
                             <field name="retarded5" />
-                        </group>
-                          <group>
-                            <field name="anhydrous5"/>
-                        </group>
-                        <group>
                             <field name="keenes5" />
                         </group>
+                          
                     </group>
 
 
-                    <group attrs="{'invisible': [('cao_visible2', '=', False)]}">
+                    <group attrs="{'invisible': [('cao_visible2', '=', False)]}" style="white-space:nowrap;">
                        <group>
                             <field name="wt_of_sample_cao2"/>
-                            <br></br>
+                            
                             <field name="burette_cao2"/>
-                             <br></br>
+                             
                             <field name="normality_cao2"/>
-                             <br></br>
+                             
                               <field name="dilution_cao2"/>
-                             <br></br>
+                             
                            
                               <field name="cao2"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -294,34 +284,31 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('mgo_visible2', '=', False)]}">
+                    <group attrs="{'invisible': [('mgo_visible2', '=', False)]}" style="white-space:nowrap">
                          <group>
                             <field name="plaster6"/>
+                             <field name="anhydrous6"/>
                         </group>
                         <group>
                             <field name="retarded6" />
+                              <field name="keenes6" />
                         </group>
-                          <group>
-                            <field name="anhydrous6"/>
-                        </group>
-                        <group>
-                            <field name="keenes6" />
-                        </group>
+                         
                     </group>
 
 
                     <group attrs="{'invisible': [('mgo_visible2', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap">
                             <field name="wt_of_sample_mgo2"/>
-                            <br></br>
+                            
                             <field name="burette_mgo2"/>
-                             <br></br>
+                             
                             <field name="normality_mgo2"/>
-                             <br></br>
+                             
                             <field name="dilution_mgo2"/>
-                             <br></br>
+                             
                               <field name="mgo2"/>
-                             <br></br>
+                             
                            
                        </group>
                     </group> 
@@ -346,32 +333,29 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('free_lime_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('free_lime_visible', '=', False)]}" style="white-space:nowrap">
                          <group>
                             <field name="plaster7"/>
+                             <field name="anhydrous7"/>
                         </group>
                         <group>
                             <field name="retarded7" />
-                        </group>
-                          <group>
-                            <field name="anhydrous7"/>
-                        </group>
-                        <group>
                             <field name="keenes7" />
                         </group>
+                          
                     </group>
 
 
                     <group attrs="{'invisible': [('free_lime_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap">
                             <field name="free_lime_wt"/>
-                            <br></br>
+                            
                             <field name="free_lime_br"/>
-                             <br></br>
+                             
                             <field name="free_lime_nor"/>
-                             <br></br>
+                             
                             <field name="free_lime"/>
-                             <br></br>
+                             
                            
                            
                        </group>
@@ -397,32 +381,29 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('soluble_sodium_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('soluble_sodium_visible', '=', False)]}" style="white-space:nowrap">
                          <group>
                             <field name="plaster8"/>
+                             <field name="anhydrous8"/>
                         </group>
                         <group>
                             <field name="retarded8" />
+                             <field name="keenes8" />
                         </group>
-                          <group>
-                            <field name="anhydrous8"/>
-                        </group>
-                        <group>
-                            <field name="keenes8" />
-                        </group>
+                          
                     </group>
 
 
                     <group attrs="{'invisible': [('soluble_sodium_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap">
                             <field name="soluble_sodium_wt"/>
-                            <br></br>
+                            
                             <field name="soluble_sodium_re"/>
-                             <br></br>
+                             
                             <field name="soluble_sodium_fa"/>
-                             <br></br>
+                             
                             <field name="soluble_sodium"/>
-                             <br></br>
+                             
                            
                            
                        </group>
@@ -449,32 +430,33 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('free_water_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('free_water_visible', '=', False)]}" style="white-space:nowrap">
                          <group>
                             <field name="plaster9"/>
-                        </group>
-                        <group>
-                            <field name="retarded9" />
-                        </group>
-                          <group>
                             <field name="anhydrous9"/>
                         </group>
                         <group>
+                            <field name="retarded9" />
                             <field name="keenes9" />
                         </group>
+                          
                     </group>
 
 
                     <group attrs="{'invisible': [('free_water_visible', '=', False)]}">
-                       <group>
-                            <field name="free_water_wt"/>
-                            <br></br>
-                            <field name="free_water_br"/>
-                             <br></br>
-                            <field name="free_water_nor"/>
-                             <br></br>
+                       <group style="white-space:nowrap; width:60%">
+                            <field name="wt_of_empty_water"/>
+                            
+                            <field name="wt_empty_cs_water"/>
+                             
+                            <field name="wt_cs_water"/>
+                             
+                            <field name="wt_of_sample_water"/>
+                              
+                            <field name="water_in_wt"/>
+                             
                             <field name="free_water"/>
-                             <br></br>
+                             
                            
                            
                        </group>
@@ -500,34 +482,31 @@
                           
                     </group>
 
-                    <group attrs="{'invisible': [('combined_water_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('combined_water_visible', '=', False)]}" style="white-space:nowrap">
                          <group>
                             <field name="plaster9"/>
-                        </group>
-                        <group>
-                            <field name="retarded9" />
-                        </group>
-                          <group>
                             <field name="anhydrous9"/>
                         </group>
                         <group>
+                            <field name="retarded9" />
                             <field name="keenes9" />
                         </group>
+                          
                     </group>
 
 
                     <group attrs="{'invisible': [('combined_water_visible', '=', False)]}">
-                       <group>
+                       <group style="white-space:nowrap">
                             <field name="combined_water_wt"/>
-                            <br></br>
+                            
                             <field name="combined_water_br"/>
-                             <br></br>
+                             
                             <field name="combined_water_nor"/>
-                             <br></br>
+                             
                             <field name="combined_water_di"/>
-                             <br></br>
+                             
                               <field name="combined_water"/>
-                             <br></br>
+                             
                            
                            
                        </group>
@@ -540,6 +519,58 @@
                                readonly="1"/>
                         <field name='free_water_nabl'/>
                     </group> 
+
+
+
+
+                      <!--calsium oxide-->
+                    <group attrs="{'invisible': [('calcium_oxide_visible2', '=', False)]}">
+                        <h1>
+                            <field name="calcium_oxide_name" readonly="1" nolabel="1"/>
+                            <field name="calcium_oxide_visible2" invisible="1"/>
+                            
+                        </h1>
+                          
+                    </group>
+
+                    <group attrs="{'invisible': [('calcium_oxide_visible2', '=', False)]}" style="white-space:nowrap">
+                         <group>
+                            <field name="plaster11"/>
+                            <field name="anhydrous11"/>
+                        </group>
+                        <group>
+                            <field name="retarded11" />
+                             <field name="keenes11" />
+                        </group>
+                         
+                    </group>
+
+
+                    <group attrs="{'invisible': [('calcium_oxide_visible2', '=', False)]}">
+                       <group style="white-space:nowrap">
+                            <field name="wt_of_sample_calcium_oxide"/>
+                        
+                            <field name="burette_calcium_oxide"/>
+                        
+                            <field name="normality_calcium_oxide"/>
+                        
+                              <field name="dilution_calcium_oxide"/>
+                        
+                           
+                              <field name="calcium_oxide"/>
+                        
+                           
+                       </group>
+                    </group> 
+                     <group attrs="{'invisible': [('calcium_oxide_visible2', '=', False)]}">
+                          
+                        <field name='calcium_oxide_conformity2'
+                               decoration-success="calcium_oxide_conformity2 == 'pass'" 
+                               decoration-danger="calcium_oxide_conformity2 == 'fail'" 
+                               readonly="1"/>
+                        <field name='calcium_oxide_nabl2'/>
+                    </group> 
+
 
 
 

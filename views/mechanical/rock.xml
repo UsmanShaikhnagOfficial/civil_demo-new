@@ -30,7 +30,7 @@
 
                      <!-- <group > -->
                    
-                    <field name="child_lines" nolabel="1" >
+                    <field name="child_lines" nolabel="1">
                             <tree editable="bottom">
                                 <field name='sr_no'/>
                                 <!-- <field name='location'/> -->
@@ -44,20 +44,27 @@
                                 <field name='dry_density'/>
                                 <field name='saturated_spc_gravity'/>
                             </tree>
-                           
-                          </field> 
-                            <group>
+                          
+                    </field> 
+                            <!-- <group style="white-space: nowrap; width:50%;">
                                <field name='avg_porosity'/>
                             </group>
-                            <group>
+                            <group style="white-space: nowrap; width:50%;">
                                <field name='avg_water_absorption'/>
                             </group>  
-                            <group>
+                            <group style="white-space: nowrap; width:50%;">
                                <field name='avg_dry_density'/>
                             </group>
-                            <group>
+                            <group style="white-space: nowrap; width:50%;">
                                <field name='avg_saturated_spc_gravity'/>
-                            </group>
+                            </group>  -->
+
+                            <group style="white-space: nowrap; width:50%;">
+                               <field name='avg_porosity'/>
+                               <field name='avg_water_absorption'/>
+                               <field name='avg_dry_density'/>
+                               <field name='avg_saturated_spc_gravity'/>
+                            </group> 
 
 
 

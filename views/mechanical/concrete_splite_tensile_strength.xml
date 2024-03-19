@@ -32,7 +32,7 @@
                         <group>
                             <field name="date_of_casting"  string="Date of Casting" identity="extra"/>
                         </group>
-                        <group>
+                        <group style="width:30%">
                             <field name="date_of_testing"  string="Date of Testing" identity="extra"/>
                         </group>
                         <group>
@@ -59,7 +59,7 @@
 
                     <group attrs="{'invisible': [('splite_tensile_visible', '=', False)]}">
                         <field name="child_lines" nolabel="1" >
-                            <tree editable="bottom">
+                            <tree >
                                 <field name='sr_no'/>
                                 <field name='id_mark'/>
                                 <field name='wt_of_cylender'/>
@@ -74,7 +74,7 @@
                        
                     </group>
 
-                    <group attrs="{'invisible': [('splite_tensile_visible', '=', False)]}">
+                    <group attrs="{'invisible': [('splite_tensile_visible', '=', False)]}" style="white-space:nowrap">
                         <field name='average_split_tensile'  col="12"/> 
                        
                          <!-- <tr cols="12">
@@ -96,6 +96,32 @@
             </form>
         </field>
         </record>
+
+         <record id="mechanical_concrete_split_tensile_line_view" model="ir.ui.view">
+        <field name="name">mechanical.concrete.split.tensile.line.form</field>
+        <field name="model">mechanical.concrete.split.tensile.line</field>
+        <field name="arch" type="xml">
+            <form>
+            <group>
+            <group>
+            <field name='sr_no' string="Sr. NO"/>
+                <field name='id_mark' string="ID Mark/Location"/>
+                <field name='wt_of_cylender' string="Weight of Cylinder Kg"/>
+                <field name='height' string="Height mm"/>
+                <field name='diameter' string="Diameter mm"/>
+            </group>
+            <group>
+                <field name='breaking_load' string="Breaking Load KN"/>
+                <field name="split_strength" string="Split Tensile Strength N/mm2"/>
+                <!-- <field name='compressive_strength' string="Compressive Strength N/mm²"/> -->
+                <field name="parent_id" invisible="1"/>
+            </group>
+            </group>
+                
+            </form>
+        </field>
+    </record>
+  
 
     </data>
 </odoo>

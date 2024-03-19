@@ -23,9 +23,9 @@ class ChemicalGyspum(models.Model):
     anhydrous1 = fields.Char(string="Anhydrous Gypsum Plaster",default="40 Min")
     keenes1 = fields.Char(string="Keene's Plaster",default="47 Min")
 
-    wt_of_sample_so3 = fields.Float("A) Wt of Sample (gm)")
-    wt_cr_so3 = fields.Float("B) Wt of crucible +Residue after ignition (gm)")
-    wt_empty_co3 = fields.Float("C) Wt of empty crucible (gm)")
+    wt_of_sample_so3 = fields.Float("A) Wt of Sample (gm)",digits=(16, 4))
+    wt_cr_so3 = fields.Float("B) Wt of crucible +Residue after ignition (gm)",digits=(16, 4))
+    wt_empty_co3 = fields.Float("C) Wt of empty crucible (gm)",digits=(16, 4))
     difference_co3 = fields.Float("D)Diff. in weight(gm)=( B - C )",compute="_compute_difference_co3",digits=(12,4))
     so3 = fields.Float("SO3  % =  D x 34.30  / A",compute="_compute_so3",digits=(12,3))
 
@@ -103,11 +103,11 @@ class ChemicalGyspum(models.Model):
     anhydrous2 = fields.Char(string="Anhydrous Gypsum Plaster",default="3.0 Max")
     keenes2 = fields.Char(string="Keene's Plaster",default="2.0 Max")
 
-    wt_of_empty_loi = fields.Float("A) Wt of empty weighing bottle (gm)")
-    wt_empty_cs_loi = fields.Float("B) (Wt of empty weighing bottle + Sample) before ignition, gm")
-    wt_cs_loi = fields.Float("C) Wt.of sample (B-A) ( gm )", compute="_compute_wt_cs_loi", store=True)
-    wt_of_sample_loi = fields.Float("D) (Wt of empty weighing bottle + Sample) after ignition, (gm)")
-    loi_in_wt = fields.Float("E) Diff. in weight = (B - D), gm", compute="_compute_loi_in_wt", store=True)
+    wt_of_empty_loi = fields.Float("A) Wt of empty weighing bottle (gm)",digits=(16, 4))
+    wt_empty_cs_loi = fields.Float("B) (Wt of empty weighing bottle + Sample) before ignition, gm",digits=(16, 4))
+    wt_cs_loi = fields.Float("C) Wt.of sample (B-A) ( gm )", compute="_compute_wt_cs_loi", store=True,digits=(16, 4))
+    wt_of_sample_loi = fields.Float("D) (Wt of empty weighing bottle + Sample) after ignition, (gm)",digits=(16, 4))
+    loi_in_wt = fields.Float("E) Diff. in weight = (B - D), gm", compute="_compute_loi_in_wt", store=True,digits=(16, 4))
     loi = fields.Float("LOI % = E x 100 / C", compute="_compute_loi", store=True)
 
     @api.depends('wt_empty_cs_loi', 'wt_of_empty_loi')
@@ -195,7 +195,7 @@ class ChemicalGyspum(models.Model):
     anhydrous3 = fields.Char(string="Anhydrous Gypsum Plaster",default="2/3 of SO3 content")
     keenes3 = fields.Char(string="Keene's Plaster",default="2/3 of SO3 content")
 
-    wt_of_sample_cao1 = fields.Float("A) Wt of Sample (gm)")
+    wt_of_sample_cao1 = fields.Float("A) Wt of Sample (gm)",digits=(16, 4))
     burette_cao1  = fields.Float("B) Burrette reading (ml)")
     normality_cao1 = fields.Float("C) Normality of 0.1N KMnO₄")
     cao1 = fields.Float("CaO  % = B x C x 11.22/ A",compute="_compute_cao1")
@@ -275,10 +275,11 @@ class ChemicalGyspum(models.Model):
     keenes4 = fields.Char(string="Keene's Plaster",default="0.3 Max")
 
 
-    wt_of_sample_mgo1 = fields.Float("A) Wt of Sample (gm)")
+    wt_of_sample_mgo1 = fields.Float("A) Wt of Sample (gm)",digits=(16, 4))
     burette_mgo1 = fields.Float("B) Wt of crucible + Residue after ignition (gm)")
     normality_mgo1 = fields.Float("C) Wt of empty Cruible (gm)")
     dilution_mgo1 = fields.Float("D) Diff. in weight (gm)", compute="_compute_dilution_mgo1",digits=(16,4), store=True)
+    dilution_mgo2 = fields.Float("Dilution")
     mgo1 = fields.Float("MgO % = D x 36.21/ A", compute="_compute_mgo1", store=True)
 
     @api.depends('burette_mgo1', 'normality_mgo1')
@@ -286,11 +287,11 @@ class ChemicalGyspum(models.Model):
         for record in self:
             record.dilution_mgo1 = record.burette_mgo1 - record.normality_mgo1
 
-    @api.depends('dilution_mgo1', 'wt_of_sample_mgo1')
+    @api.depends('dilution_mgo1', 'wt_of_sample_mgo1' , 'dilution_mgo2')
     def _compute_mgo1(self):
         for record in self:
             if record.wt_of_sample_mgo1 != 0:
-                record.mgo1 = (record.dilution_mgo1 * 36.21) / record.wt_of_sample_mgo1
+                record.mgo1 = (record.dilution_mgo1 * 36.21 * record.dilution_mgo2) / record.wt_of_sample_mgo1
             else:
                 record.mgo1 = 0.0
 
@@ -359,7 +360,7 @@ class ChemicalGyspum(models.Model):
     keenes5 = fields.Char(string="Keene's Plaster",default="--")
 
 
-    wt_of_sample_cao2 = fields.Float("A) Wt of Sample (gm)")
+    wt_of_sample_cao2 = fields.Float("A) Wt of Sample (gm)",digits=(16, 4))
     burette_cao2 = fields.Float("B) BR of 0.01N EDTA")
     normality_cao2 = fields.Float("C) Normality OF EDTA")
     dilution_cao2 = fields.Float("D) Dilution")
@@ -436,7 +437,7 @@ class ChemicalGyspum(models.Model):
     keenes6 = fields.Char(string="Keene's Plaster",default="--")
 
 
-    wt_of_sample_mgo2 = fields.Float("A) Wt of Sample (gm)")
+    wt_of_sample_mgo2 = fields.Float("A) Wt of Sample (gm)",digits=(16, 4))
     burette_mgo2 = fields.Float("B) BR of 0.01N CaO - BR of 0.01N EDTA")
     normality_mgo2 = fields.Float("C) Normality of EDTA")
     dilution_mgo2 = fields.Float("D) Dilution")
@@ -515,7 +516,7 @@ class ChemicalGyspum(models.Model):
     keenes7 = fields.Char(string="Keene's Plaster",default="--")
 
 
-    free_lime_wt = fields.Float("A) Wt.of sample (gm)")
+    free_lime_wt = fields.Float("A) Wt.of sample (gm)",digits=(16, 4))
     free_lime_br = fields.Float("B) Burette reading (ml)")
     free_lime_nor = fields.Float("C) Normality of 0.5N HCL")
     free_lime = fields.Float("Free lime % = B x C x 0.0037 x 100/ A", compute="_compute_free_lime",digits=(16,3), store=True)
@@ -593,10 +594,10 @@ class ChemicalGyspum(models.Model):
     keenes8 = fields.Char(string="Keene's Plaster",default="0.3 Max")
 
 
-    soluble_sodium_wt = fields.Float("A) Wt.of sample (gm)")
+    soluble_sodium_wt = fields.Float("A) Wt.of sample (gm)",digits=(16, 4))
     soluble_sodium_re = fields.Float("B) Reading")
     soluble_sodium_fa = fields.Float("C) Factor")
-    soluble_sodium = fields.Float("Soluble sodium oxide % (Na2O)", compute="_compute_soluble_sodium", store=True)
+    soluble_sodium = fields.Float("Soluble sodium oxide % (Na2O)", compute="_compute_soluble_sodium", store=True ,digits=(16, 3))
 
     @api.depends('soluble_sodium_wt', 'soluble_sodium_re', 'soluble_sodium_fa')
     def _compute_soluble_sodium(self):
@@ -670,23 +671,51 @@ class ChemicalGyspum(models.Model):
     keenes9 = fields.Char(string="Keene's Plaster",default="--")
 
 
-    free_water_wt = fields.Float("Mass of sample")
-    free_water_br = fields.Float("Mass in gm of the material after drying")
-    free_water_nor = fields.Float("Diff", compute="_compute_free_water_nor", store=True)
-    free_water = fields.Float("Free water = diff * 100 / Mass", compute="_compute_free_water", store=True)
 
-    @api.depends('free_water_wt', 'free_water_br')
-    def _compute_free_water_nor(self):
-        for record in self:
-            record.free_water_nor = record.free_water_wt - record.free_water_br
+    wt_of_empty_water = fields.Float("A) Wt of empty weighing bottle (gm)",digits=(16, 4))
+    wt_empty_cs_water = fields.Float("B) (Wt of empty weighing bottle + Sample) before ignition, gm",digits=(16, 4))
+    wt_cs_water = fields.Float("C) Wt.of sample (B-A) ( gm )", compute="_compute_wt_cs_water", store=True,digits=(16, 4))
+    wt_of_sample_water = fields.Float("D) (Wt of empty weighing bottle + Sample) after ignition, (gm)",digits=(16, 4))
+    water_in_wt = fields.Float("E) Diff. in weight = (B - D), gm", compute="_compute_water_in_wt", store=True,digits=(16, 4))
+    free_water = fields.Float("Free water = E x 100 / C", compute="_compute_water", store=True)
 
-    @api.depends('free_water_nor', 'free_water_wt')
-    def _compute_free_water(self):
+    @api.depends('wt_empty_cs_water', 'wt_of_empty_water')
+    def _compute_wt_cs_water(self):
         for record in self:
-            if record.free_water_wt != 0:
-                record.free_water = (record.free_water_nor * 100) / record.free_water_wt
+            record.wt_cs_water = record.wt_empty_cs_water - record.wt_of_empty_water
+
+    @api.depends('wt_empty_cs_water', 'wt_of_sample_water')
+    def _compute_water_in_wt(self):
+        for record in self:
+            record.water_in_wt = record.wt_empty_cs_water - record.wt_of_sample_water
+
+    @api.depends('wt_cs_water', 'water_in_wt')
+    def _compute_water(self):
+        for record in self:
+            if record.wt_cs_water != 0:
+                record.free_water = (record.water_in_wt * 100) / record.wt_cs_water
             else:
                 record.free_water = 0.0
+  
+
+
+    # free_water_wt = fields.Float("Mass of sample",digits=(16, 4))
+    # free_water_br = fields.Float("Mass in gm of the material after drying")
+    # free_water_nor = fields.Float("Diff", compute="_compute_free_water_nor", store=True)
+    # free_water = fields.Float("Free water = diff * 100 / Mass", compute="_compute_free_water", store=True)
+
+    # @api.depends('free_water_wt', 'free_water_br')
+    # def _compute_free_water_nor(self):
+    #     for record in self:
+    #         record.free_water_nor = record.free_water_wt - record.free_water_br
+
+    # @api.depends('free_water_nor', 'free_water_wt')
+    # def _compute_free_water(self):
+    #     for record in self:
+    #         if record.free_water_wt != 0:
+    #             record.free_water = (record.free_water_nor * 100) / record.free_water_wt
+    #         else:
+    #             record.free_water = 0.0
    
   
   
@@ -752,7 +781,7 @@ class ChemicalGyspum(models.Model):
     keenes10 = fields.Char(string="Keene's Plaster",default="--")
 
 
-    combined_water_wt = fields.Float("Mass of prepared sample")
+    combined_water_wt = fields.Float("Mass of prepared sample",digits=(16, 4))
     combined_water_br = fields.Float("Mass in gm of the material before drying")
     combined_water_nor = fields.Float("Mass in gm of the material after drying")
     combined_water_di = fields.Float("Diff", compute="_compute_combined_water_di",digits=(16,3), store=True)
@@ -825,6 +854,86 @@ class ChemicalGyspum(models.Model):
 
 
 
+     # CaO2
+
+    
+    calcium_oxide_name = fields.Char("Name",default="Calcium Oxide")
+    calcium_oxide_visible2 = fields.Boolean("CaO",compute="_compute_visible")
+
+    plaster11= fields.Char(string="Plaster Of Paris",default="--")
+    retarded11 = fields.Char(string="Retarded Hemihydrate Gypsum Plaster",default="--")
+    anhydrous11 = fields.Char(string="Anhydrous Gypsum Plaster",default="--")
+    keenes11 = fields.Char(string="Keene's Plaster",default="--")
+
+
+    wt_of_sample_calcium_oxide = fields.Float("A) Wt of Sample (gm)",digits=(16, 4))
+    burette_calcium_oxide = fields.Float("B) Burrette reading" ,digits=(16, 4))
+    normality_calcium_oxide = fields.Float("C) Normality of 0.1N KMnO4" ,digits=(16, 4))
+    dilution_calcium_oxide = fields.Float("D) Dilution")
+    calcium_oxide = fields.Float("Calcium Oxide = B*C*2.8*D/A", compute="_compute_calcium_oxide", store=True)
+
+    @api.depends('burette_calcium_oxide', 'normality_calcium_oxide', 'dilution_calcium_oxide', 'wt_of_sample_calcium_oxide')
+    def _compute_calcium_oxide(self):
+        for record in self:
+            if record.wt_of_sample_calcium_oxide != 0:
+                record.calcium_oxide = (record.burette_calcium_oxide * record.normality_calcium_oxide * 2.8 * record.dilution_calcium_oxide) / record.wt_of_sample_calcium_oxide
+            else:
+                record.calcium_oxide = 0.0
+
+   
+
+    calcium_oxide_conformity2 = fields.Selection([
+            ('pass', 'Pass'),
+            ('fail', 'Fail')], string="Conformity", compute="_compute_calcium_oxide_conformity2", store=True)
+
+    @api.depends('calcium_oxide','eln_ref','grade')
+    def _compute_calcium_oxide_conformity2(self):
+        
+        for record in self:
+            record.calcium_oxide_conformity2 = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','966341bc-cef0-49da-8f72-df520a8c702e')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','966341bc-cef0-49da-8f72-df520a8c702e')]).parameter_table
+            for material in materials:
+                if material.grade.id == record.grade.id:
+                    req_min = material.req_min
+                    req_max = material.req_max
+                    mu_value = line.mu_value
+                    
+                    lower = record.calcium_oxide - record.calcium_oxide*mu_value
+                    upper = record.calcium_oxide + record.calcium_oxide*mu_value
+                    if lower >= req_min and upper <= req_max:
+                        record.calcium_oxide_conformity2 = 'pass'
+                        break
+                    else:
+                        record.calcium_oxide_conformity2 = 'fail'
+
+    calcium_oxide_nabl2 = fields.Selection([
+        ('pass', 'NABL'),
+        ('fail', 'Non-NABL')], string="NABL", compute="_compute_calcium_oxide_nabl", store=True)
+
+    @api.depends('calcium_oxide','eln_ref','grade')
+    def _compute_calcium_oxide_nabl(self):
+        
+        for record in self:
+            record.calcium_oxide_nabl2 = 'fail'
+            line = self.env['lerm.parameter.master'].search([('internal_id','=','966341bc-cef0-49da-8f72-df520a8c702e')])
+            materials = self.env['lerm.parameter.master'].search([('internal_id','=','966341bc-cef0-49da-8f72-df520a8c702e')]).parameter_table
+            for material in materials:
+                if material.grade.id == record.grade.id:
+                    lab_min = line.lab_min_value
+                    lab_max = line.lab_max_value
+                    mu_value = line.mu_value
+                    
+                    lower = record.calcium_oxide - record.calcium_oxide*mu_value
+                    upper = record.calcium_oxide + record.calcium_oxide*mu_value
+                    if lower >= lab_min and upper <= lab_max:
+                        record.calcium_oxide_nabl2 = 'pass'
+                        break
+                    else:
+                        record.calcium_oxide_nabl2 = 'fail'
+
+
+
 
 
 
@@ -858,6 +967,7 @@ class ChemicalGyspum(models.Model):
             record.soluble_sodium_visible = False
             record.free_water_visible = False
             record.combined_water_visible = False
+            record.calcium_oxide_visible2 = False
          
            
             for sample in record.sample_parameters:
@@ -884,6 +994,8 @@ class ChemicalGyspum(models.Model):
                     record.free_water_visible = True
                 if sample.internal_id == '1afa0443-8649-48a3-b73e-49f9fbb08d3d':
                     record.combined_water_visible = True
+                if sample.internal_id == '966341bc-cef0-49da-8f72-df520a8c702e':
+                    record.calcium_oxide_visible2 = True
 
 
 

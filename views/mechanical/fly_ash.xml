@@ -52,7 +52,7 @@
                       <field name="end_date_normal"/>
                     </group>
                     </group> -->
-                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}" style="white-space:nowrap;">
                         <label for="gravity_of_flyash1" string="Specific Gravity of Flyash" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -64,8 +64,8 @@
                             <field  name="gravity_of_flyash2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="gravity_of_cement1" string="Specific Gravity of Cement" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -77,8 +77,8 @@
                             <field  name="gravity_of_cement2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="fly_ash_n1" string="N" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -90,8 +90,8 @@
                             <field  name="fly_ash_n2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="wt_of_flash_1" string="Wt. of  Flyash" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -103,8 +103,8 @@
                             <field  name="wt_of_flash_2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="wt_of_cement_1" string="Wt. of  Cement (g)" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -116,8 +116,8 @@
                             <field  name="wt_of_cement_2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="total_wt_of_sample_fly_1" string="Total Weight of Sample(g)" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -129,8 +129,8 @@
                             <field  name="total_wt_of_sample_fly_2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="wt_of_water_required_fly_1" string="Wt.of water required (g)" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -142,8 +142,8 @@
                             <field  name="wt_of_water_required_fly_2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                     <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="penetration_planger_fly_1" string="Penetraion of vicat's Plunger (mm)" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -155,8 +155,8 @@
                             <field  name="penetration_planger_fly_2"  colspan="3"  nolabel="1"/>
                           </group> -->
                         </div>
-                    </group>
-                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}">
+                    <!-- </group>
+                    <group attrs="{'invisible': [('normal_consistency_visible', '=', False)]}"> -->
                         <label for="normal_consistency_fly_1" string="Normal Consistency, %" />
                         <div class="address_format " >
                           <group colspan="1"  class="oe_inline">
@@ -537,7 +537,7 @@
                     
                     <group attrs="{'invisible': [('compressive_visible', '=', False)]}">
 
-                      <field name="casting_date_28days"/>
+                      <field name="casting_date_28days" style="width:100px"/>
                       <field name="testing_date_28days"/>
 
                       <field name="casting_28_days_tables">
@@ -606,7 +606,7 @@
                     
                     <group attrs="{'invisible': [('compressive_visible', '=', False)]}">
 
-                      <field name="casting_dates_28days"/>
+                      <field name="casting_dates_28days" style="width:100px"/>
                       <field name="testing_dates_28days"/>
 
                       <field name="casting_28_dayss_tables">
